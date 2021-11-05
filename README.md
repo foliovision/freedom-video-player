@@ -1,10 +1,6 @@
 
 # Flowplayer
 
-Note! This archived repository contains the old open-source player called Flowplayer 7. Merely for history purposes.
-
-For more recent offerings consider visiting our website.
-
 [website](https://flowplayer.com) | [demos](https://flowplayer.com/demos/) | [docs](https://flowplayer.com/docs/)
 
 ## For the impatient

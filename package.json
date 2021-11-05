@@ -32,21 +32,30 @@
     "bean": "^1.0.15",
     "class-list": "~0.1.1",
     "computed-style": "^0.3.0",
-    "es5-shim": "^4.1.1",
+    "es5-shim": "^4.6.2",
     "extend-object": "~1.0.0",
-    "is-function": "~1.0.1",
-    "scriptjs": "^2.5.7"
+    "is-function": "~1.0.2",
+    "scriptjs": "^2.5.9"
   },
   "devDependencies": {
-    "autoprefixer": "^6.5.4",
-    "brfs": "^1.4.3",
-    "browserify": "^13.1.1",
-    "browserify-derequire": "^0.9.4",
-    "ie8": "=0.2.3",
-    "mochify": "~1.1.2",
-    "node-sass": "^3.10.1",
-    "postcss-cli": "^2.6.0",
-    "postcss-unopacity": "^1.0.1",
-    "uglify-js": "^3.3.7"
+    "autoprefixer": "^10.4.0",
+    "brfs": "^2.0.2",
+    "browserify": "^17.0.0",
+    "browserify-derequire": "^1.1.1",
+    "ie8": "=0.8.1",
+    "mochify": "~8.1.0",
+    "node-sass": "^6.0.1",
+    "postcss": "^8.3.11",
+    "postcss-cli": "^9.0.1",
+    "postcss-unopacity": "^2.0.0",
+    "uglify-js": "^3.14.2"
+  },
+  "postcss": {
+    "plugins": {
+      "autoprefixer": {},
+      "postcss-unopacity": {
+        "method": "copy"
+      }
+    }
   }
 }
