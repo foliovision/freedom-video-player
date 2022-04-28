@@ -1,3 +1,22 @@
+Version 7.2.8
+=============
+
+Enhancements
+------------
+
+ * Keyboard controls work for the player which is hovered, not depending on a click anymore
+ * Timeline tooltip shows on timeline dragging on mobile, with no seeking in media file
+
+Fixes
+-----
+
+ * Airplay button fix for incompatible playlist items
+ * Do not break the video load if subtitle file is missing
+ * Do not remove error messages on progess event
+ * Enabling subtitles in middle of the subtitle entry shows the subtitle line right away
+ * Fix multiple player hover events if iframe is placed on top of it
+ * Fixing bar-slider to work even when you drag out of its boundaries.
+
 Version 7.2.7
 =============
 
