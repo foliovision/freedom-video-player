@@ -1,3 +1,13 @@
+Version 7.2.9
+=============
+
+Fixes
+-----
+
+* Fix error trigger for missing subtitles to pass proper data to API
+* Fullscreen - fix for Safari 12 and above (this fix was lost in FV Player)
+* Volume slider - make it easier to mute the video by dragging it all the way to the left
+
 Version 7.2.8
 =============
 
