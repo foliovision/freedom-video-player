@@ -1,3 +1,12 @@
+Version 7.2.10
+=============
+
+Fixes
+-----
+
+* HLS.js - get proper video dimensions, previously it would report 0
+* Performance - no requestAnimationFrame for CSS classes
+
 Version 7.2.9
 =============
 
