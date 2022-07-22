@@ -32,7 +32,6 @@
     "bean": "^1.0.15",
     "class-list": "~0.1.1",
     "computed-style": "^0.3.0",
-    "es5-shim": "^4.6.5",
     "extend-object": "~1.0.0",
     "is-function": "~1.0.2",
     "scriptjs": "^2.5.9"
