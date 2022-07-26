@@ -1,13 +1,4 @@
 export PATH := ./node_modules/.bin/:$(PATH)
-# flash compile
-MXMLC_VERSION := $(shell mxmlc --version 2>/dev/null)
-
-ifdef MXMLC_VERSION
-	FLASH = $(shell which mxmlc)
-else
-	FLASH="/opt/flowplayer/flex3sdk/bin/mxmlc"
-endif
-FLASH_COMPILE=$(FLASH) -default-frame-rate=50 -static-link-runtime-shared-libraries=true -library-path=.
 
 # version and date
 VERSION=$(shell cat VERSION)
@@ -51,7 +42,7 @@ skin:
 	@ node-sass skin/sass/skin.sass | postcss > $(SKIN)/skin.css
 	@ cp -r skin/icons $(SKIN)
 
-zip: min concat skin flash
+zip: min concat skin
 	@ cp index.html $(DIST)
 	@ cp LICENSE.md $(DIST)
 	@ rm -f $(DIST)/flowplayer.zip
@@ -67,7 +58,6 @@ deps:
 all: clean zip
 
 # shortcuts
-as: flash
 js: concat
 
 
