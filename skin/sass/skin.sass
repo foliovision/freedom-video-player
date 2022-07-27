@@ -561,7 +561,7 @@
       text-align: left
 
   &.fp-outlined
-    .fp-play, .fp-pause
+    .fp-play, .fp-pause, .fp-waiting
       svg.fp-play-rounded-fill, svg.fp-pause-rounded-fill, svg.fp-loading-rounded-fill
         display: none
       svg.fp-play-rounded-outline, svg.fp-pause-rounded-outline, svg.fp-loading-rounded-outline
@@ -647,6 +647,28 @@
     filter: blur(5px)
 
 // svg replacement using fp-preload
+@keyframes waiting
+  0%
+    transform: scale(1)
+
+  20%
+    transform: scale(1, 2)
+
+  40%
+    transform: scale(1)
+
+.fp-preload
+  transition: opacity .3s .1s
+  position: static
+  top: 0
+  bottom: 0
+  left: 0
+  right: 0
+  margin: auto
+  opacity: 0
+  display: block
+  height: 0
+
 .fp-waiting .fp-preload
   position: absolute
   display: block
