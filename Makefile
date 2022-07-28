@@ -12,9 +12,6 @@ DIST=./dist
 JS=$(DIST)/flowplayer.js
 SKIN=$(DIST)/skin
 
-CDN=releases.flowplayer.org
-CDN_PATH=""
-
 # https://flowplayer.com/license
 concat: raw
 	# flowplayer.js
@@ -28,7 +25,7 @@ raw:
 	@ cat LICENSE.js | $(SET_VERSION) | $(SET_DATE) > $(JS)
 	@ cat node_modules/ie8/build/ie8.js >> $(JS)
 	@ echo >> $(JS)
-	@ browserify -t brfs -p browserify-derequire -s flowplayer lib/index.js | $(SET_VERSION) | sed "s/@CDN/$(CDN)/" | sed "s/@CDN_PATH/$(CDN_PATH)/" >> $(JS)
+	@ browserify -t brfs -p browserify-derequire -s flowplayer lib/index.js | $(SET_VERSION) >> $(JS)
 
 min: concat
 	# flowplayer.min.js
