@@ -5,9 +5,7 @@ flowplayer(function(player, root) {
 
     var logo = document.createElement('a');
 
-    logo.href = "";
     logo.className = 'fp-logo';
-    logo.onclick = function() {};
 
     var branding_styles = {
       display: "block",
