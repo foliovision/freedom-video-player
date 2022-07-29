@@ -1,6 +1,8 @@
 flowplayer(function(player, root) {
   player.on('ready', function() {
 
+    if ( typeof player.conf.logo === 'undefined' ) return;
+
     if( root.querySelector('fp-logo') ) root.querySelector('fp-logo').remove();
 
     var logo = document.createElement('a');
@@ -15,7 +17,7 @@ flowplayer(function(player, root) {
       zIndex: 99999,
       width: "120px",
       height: "27px",
-      backgroundImage: "url(" + [".png", "fplogo", "/", ".com", "foliovision", "//","https:"].reverse().join("") + ")"
+      backgroundImage: "url(" + player.conf.logo + ")"
     };
 
     for (var style in branding_styles) branding_styles.hasOwnProperty(style) && (logo.style[style] = branding_styles[style]);
@@ -24,10 +26,8 @@ flowplayer(function(player, root) {
 
     if( fp_player ) {
       fp_player.appendChild(logo);
-      player.trigger('fp-logo', [fp_player]);
     } else {
       root.appendChild(logo);
-      player.trigger('fp-logo', [root]);
     }
   });
 
