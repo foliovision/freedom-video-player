@@ -5,22 +5,10 @@ flowplayer(function(player, root) {
 
     if( root.querySelector('fp-logo') ) root.querySelector('fp-logo').remove();
 
-    var logo = document.createElement('a');
+    var logo = document.createElement("a");
 
     logo.className = 'fp-logo';
-
-    var branding_styles = {
-      display: "block",
-      position: "absolute",
-      left: "16px",
-      bottom: "56px",
-      zIndex: 99999,
-      width: "120px",
-      height: "27px",
-      backgroundImage: "url(" + player.conf.logo + ")"
-    };
-
-    for (var style in branding_styles) branding_styles.hasOwnProperty(style) && (logo.style[style] = branding_styles[style]);
+    logo.innerHTML = '<img src="'+ player.conf.logo +'">';
 
     var fp_player = root.querySelector(".fp-player");
 
