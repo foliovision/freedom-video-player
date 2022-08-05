@@ -314,7 +314,8 @@
     font-size: 90%
     bottom: 1.4em
     height: auto
-  .fp-timeline:hover .fp-timestamp
+  :not(.is-touch) .fp-timeline:hover .fp-timestamp,
+  .fp-timeline.is-fp-dragging .fp-timestamp
     display: inline
 
   // volume container (mute & bar)
