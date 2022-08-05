@@ -89,12 +89,10 @@
     text-align: center
     cursor: pointer
     color: #fff
-    a, strong
+    a, strong, a:before
       color: inherit !important
       font-style: normal !important
       text-decoration: none !important
-    strong
-      font-weight: bold !important
     > *
       transition: opacity .1s
       opacity: 0
@@ -259,8 +257,13 @@
     > *
       margin: 0 .6em
 
+    strong
+      margin: 0;
+      padding: .4em .6em;
+
     > strong
       letter-spacing: 1px
+      font-weight: 400
 
     img
       width: 1.2em
