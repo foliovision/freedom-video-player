@@ -1,6 +1,4 @@
-> 5%
 Last 2 versions
-IE >= 8
-Firefox >= 20
-Chrome >= 24
-Safari >= 5
+> 5%
+Firefox ESR
+IE 11
