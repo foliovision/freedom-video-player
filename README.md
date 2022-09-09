@@ -1,11 +1,11 @@
 
-# Flowplayer
+# Freedom Player
 
-[website](https://flowplayer.com) | [demos](https://flowplayer.com/demos/) | [docs](https://flowplayer.com/docs/)
+[website](https://foliovision.com) | [demos](https://foliovision.com/player/demos) | [docs](https://flowplayer.com/player)
 
 ## For the impatient
 
-1. [Download Flowplayer](https://flowplayer.com/download/)
+1. [Download Freedom Player](https://github.com/foliovision/freedom-video-player/releases)
 2. Unzip
 3. Drop the folder under your server
 
@@ -78,6 +78,8 @@ Please read the [contributing guidelines](CONTRIBUTING.md) before reporting issu
 
 ## Running tests
 
+We do automated tests with Continuous Integration on a private server for now. The previous version Flowplayer 7 had  automated testing built-in.
+
 Our automated test suite is sponsored by [BrowserStack](http://browserstack.com). Thanks you!
 
 ### Running locally
@@ -85,11 +87,11 @@ Our automated test suite is sponsored by [BrowserStack](http://browserstack.com)
 Tests are run on [BrowserStack](http://browserstack.com)
 
  * Install dependencies: `bundle install`
- * Setup broserstack tunnel: `java -jar features/support/BrowserStackTunnel.jar -f <your tunnel api key> /path/to/flowplayer/repo`
- * Run cucumber features: `rake username=<browserstack username> key=<broserstack automate api key> base_url=http://<something>.browserstack.com`
+ * Setup browserstack tunnel: `java -jar features/support/BrowserStackTunnel.jar -f <your tunnel api key> /path/to/flowplayer/repo`
+ * Run cucumber features: `rake username=<browserstack username> key=<browserstack automate api key> base_url=http://<something>.browserstack.com`
 
 ## License
 
-[GPL v3 with an ADDITIONAL TERM per GPL Section 7](LICENSE.md)
+[GPL v3](LICENSE.md)
 
-Copyright (c) 2012 Flowplayer Ltd
+Copyright (c) 2021 Foliovision s.r.o.
