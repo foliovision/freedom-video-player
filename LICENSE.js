@@ -1,5 +1,5 @@
 /*!
 
-   Flowplayer v@VERSION (@DATE) | flowplayer.com/license
+   Freedom Player v@VERSION (@DATE) | foliovision.com/player/legal/freedom-player-license
 
 */
