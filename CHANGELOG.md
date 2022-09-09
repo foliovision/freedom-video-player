@@ -1,3 +1,13 @@
+Version 7.2.11
+=============
+
+Fixes
+-----
+
+* iOS - do not show volume control on iPad as it's not supported
+* Timeline - prevent overflow for live streams is the live flag is not set
+
+
 Version 7.2.10
 =============
 
