@@ -42,7 +42,7 @@ raw:
 
 min: concat
 	# flowplayer.min.js
-	@ uglifyjs $(JS) --comments '/flowplayer.com\/license/' --compress --mangle --output $(DIST)/flowplayer.min.js
+	@ uglifyjs $(JS) --comments '/foliovision.com\/player\/legal\/freedom-player-license/' --compress --mangle --output $(DIST)/flowplayer.min.js
 
 # make all skins
 skin:

@@ -1,3 +1,11 @@
+Version 7.2.12
+=============
+
+Fixes
+-----
+
+* Android - prevent error on console if no video tag on ready event is present (YouTube)
+
 Version 7.2.11
 =============
 
