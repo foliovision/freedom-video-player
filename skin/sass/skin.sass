@@ -194,7 +194,7 @@
       transform: scale(1)
 
   // the big play button on center
-  .fp-play, .fp-pause, .fp-waiting
+  .fp-play, .fp-pause, .fp-waiting, .fp-forward, .fp-rewind
     .fp-playbtn
       display: none
     svg
@@ -223,6 +223,20 @@
   .fp-remaining
     display: none
 
+  .fp-rewind, .fp-forward
+    width: 30%;
+    position: absolute;
+    left: 0;
+    height: 100%;
+  .fp-forward
+    left: auto
+    right: 0;
+  &.is-mouseover.is-ready
+    .fp-forward, .fp-rewind
+      display: block
+      svg
+        display: block
+        opacity: 1    
 
   // bottom controls
   .fp-controls
