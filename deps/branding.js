@@ -1,4 +1,4 @@
-flowplayer(function(player, root) {
+freedomplayer(function(player, root) {
   player.on('ready', function() {
 
     if ( typeof player.conf.logo === 'undefined' ) return;

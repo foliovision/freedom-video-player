@@ -9,12 +9,12 @@ SET_DATE=sed "s/@DATE/${DATE}/"
 
 # paths
 DIST=./dist
-JS=$(DIST)/flowplayer.js
+JS=$(DIST)/freedomplayer.js
 SKIN=$(DIST)/skin
 
-# https://flowplayer.com/license
+# https://foliovision.com/player/legal/freedom-player-license
 concat: raw
-	# flowplayer.js
+	# freedomplayer.js
 	@ node -e "var fs = require('fs'), js=fs.readFileSync('$(JS)', 'utf8'); process.stdout.write(js.replace('//BRANDING', fs.readFileSync('deps/branding.js', 'utf8')));" > $(JS).tmp
 	@ mv $(JS).tmp $(JS)
 
@@ -25,11 +25,11 @@ raw:
 	@ cat LICENSE.js | $(SET_VERSION) | $(SET_DATE) > $(JS)
 	@ cat node_modules/ie8/build/ie8.js >> $(JS)
 	@ echo >> $(JS)
-	@ browserify -t brfs -p browserify-derequire -s flowplayer lib/index.js | $(SET_VERSION) >> $(JS)
+	@ browserify -t brfs -p browserify-derequire -s freedomplayer lib/index.js | $(SET_VERSION) >> $(JS)
 
 min: concat
-	# flowplayer.min.js
-	@ uglifyjs $(JS) --comments '/flowplayer.com\/license/' --compress --mangle --output $(DIST)/flowplayer.min.js
+	# freedomplayer.min.js
+	@ uglifyjs $(JS) --comments '/foliovision.com\/player\/legal\/freedom-player-license/' --compress --mangle --output $(DIST)/freedomplayer.min.js
 
 # make all skins
 skin:
@@ -41,8 +41,8 @@ skin:
 zip: min concat skin
 	@ cp index.html $(DIST)
 	@ cp LICENSE.md $(DIST)
-	@ rm -f $(DIST)/flowplayer.zip
-	cd $(DIST) && zip -r flowplayer-$(VERSION).zip * -x \*DS_Store
+	@ rm -f $(DIST)/freedomplayer.zip
+	cd $(DIST) && zip -r freedomplayer-$(VERSION).zip * -x \*DS_Store
 
 clean:
 	# cleaning
