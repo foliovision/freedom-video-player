@@ -11,7 +11,7 @@
     width: 980px; /* as grid and player */
   }
 
-  .flowplayer {
+  .freedomplayer {
     width: 980px; /* same as grid */
     margin: 0 0 424px 0; /* 414 + 10 margin bottom */
     /* the following 3 directives not needed if the playlist is below the player from the start */
@@ -19,14 +19,14 @@
     -moz-transition: margin .8s;
     transition: margin .8s;
   }
-  .is-splash.flowplayer {
+  .is-splash.freedomplayer {
     margin: 0;
     padding: 0;
   }
   /* black background during quality switches and
      work around different hls end of video handling
      https://github.com/flowplayer/flowplayer/issues/479 */
-  .is-ready.flowplayer {
+  .is-ready.freedomplayer {
     background-color: #000;
     /* the following 3 directives not needed if the playlist is below the player from the start */
     -webkit-transition: background-color 2s;
@@ -35,7 +35,7 @@
   }
 
   /* playlist as grid */
-  .flowplayer .fp-playlist {
+  .freedomplayer .fp-playlist {
     background: url(//flowplayer.com/media/img/demos/playlist/grid.jpg) no-repeat;
     padding: 0;
     height: 414px; /* (136 + 2) * 3 */
@@ -49,31 +49,31 @@
   }
   /* in splash state playlist should be on top of the player in the z-axis
    * to avoid that the big white play button overlays the thumbnails */
-  .is-splash.flowplayer .fp-playlist {
+  .is-splash.freedomplayer .fp-playlist {
     z-index: 2;
     bottom: 68px; /* (980 / 16 * 9 - 414) / 2 */
   }
 
   /* the playlist item elements */
-  .flowplayer .fp-playlist a {
+  .freedomplayer .fp-playlist a {
     width: 239px;
     height: 136px;
     display: inline-block;
   }
-  .flowplayer .fp-playlist a.is-active, .flowplayer .fp-playlist a:hover {
+  .freedomplayer .fp-playlist a.is-active, .freedomplayer .fp-playlist a:hover {
     background-image: url(//cdn.711f.flowplayer.me/adhoc/skin/img/play_white.png);
     background-position: center;
     background-repeat: no-repeat;
   }
   @media (-webkit-min-device-pixel-ratio: 2) {
-    .flowplayer .fp-playlist a.is-active, .flowplayer .fp-playlist a:hover {
+    .freedomplayer .fp-playlist a.is-active, .freedomplayer .fp-playlist a:hover {
       background-image: url(//cdn.711f.flowplayer.me/adhoc/skin/img/play_white@x2.png);
     }
   }
-  .flowplayer .fp-playlist a:hover {
+  .freedomplayer .fp-playlist a:hover {
     background-size: 12%;
   }
-  .flowplayer .fp-playlist a.is-active {
+  .freedomplayer .fp-playlist a.is-active {
     background-size: 24%;
   }
 
@@ -139,8 +139,8 @@
   }
   </style>
 
-         <!-- Flowplayer library -->
-   <script src="../dist/flowplayer.js"></script>
+         <!-- Freedom Player library -->
+   <script src="../dist/freedomplayer.js"></script>
    <!-- the quality selector plugin -->
    <script src="//localhost:8080/drive/quality-selector.js"></script>
 
@@ -150,7 +150,7 @@
 
    <div id="content">
 
-      <h1>Flowplayer · Grid playlist</h1>
+      <h1>Freedom Player · Grid playlist</h1>
 
 
 <div id="player" class="is-closeable" >
@@ -159,7 +159,7 @@
 </div>
 <script>
 var el = document.getElementById('player');
-flowplayer(el, {
+freedomplayer(el, {
   ratio: 0.5625,
   splash: true,
   qualities: '216p,360p,720p,1080p',
@@ -194,4 +194,3 @@ flowplayer(el, {
 });
 </script>
 </body>
-

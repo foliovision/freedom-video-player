@@ -9,14 +9,14 @@
    <!-- site specific styling -->
    <style>
    body { font-family: avenir, sans-serif; max-width: 1000px; margin: 0 auto; padding: .6em;}
-   .flowplayer { width: 100%; }
+   .freedomplayer { width: 100%; }
    </style>
 
-   <!-- flowplayer depends on jQuery 1.7.1+ (for now) -->
+   <!-- freedomplayer depends on jQuery 1.7.1+ (for now) -->
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
-   <!-- include flowplayer -->
-   <script src="../dist/flowplayer.js?i"></script>
+   <!-- include freedomplayer -->
+   <script src="../dist/freedomplayer.js?i"></script>
    <script>
 //flowplayer.conf.hlsQualities = [{level: -1, label: 'ABR' }, { level: 0, label: 'Low quality' }, { level: 7, label: 'High quality' }];
 //flowplayer.conf.hlsQualities = false;
@@ -29,7 +29,7 @@
 <body>
 
    <!-- the player -->
-   <div class="flowplayer"
+   <div class="freedomplayer"
       -data-engine="flash"
       data-swf="../dist/flowplayer.swf"
       data-swf-hls="../dist/flowplayerhls.swf"
@@ -44,4 +44,3 @@
 
    </div>
 </body>
-

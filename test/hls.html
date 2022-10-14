@@ -13,11 +13,11 @@
       text-align: center;
       padding-top: 1%;
    }
-   .flowplayer { width: 70%; }
+   .freedomplayer { width: 70%; }
    </style>
    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-   <!-- include flowplayer -->
-   <script src="../dist/flowplayer.js?i"></script>
+   <!-- include freedomplayer -->
+   <script src="../dist/freedomplayer.js?i"></script>
    </head>
 
 <body>
@@ -28,7 +28,7 @@
 
     <script>
     var el = document.getElementById('player');
-    var api = flowplayer(el, {
+    var api = freedomplayer(el, {
         ratio: 0.417,
         nativesubtitles: true,
         //splash: true,
@@ -51,4 +51,3 @@
 
 
 </body>
-

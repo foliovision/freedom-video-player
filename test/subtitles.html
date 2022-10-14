@@ -13,11 +13,11 @@
       text-align: center;
       padding-top: 1%;
    }
-   .flowplayer { display: inline-block;  width: 30%; }
+   .freedomplayer { display: inline-block;  width: 30%; }
    </style>
 
-   <!-- include flowplayer -->
-   <script src="../dist/flowplayer.js?i"></script>
+   <!-- include freedomplayer -->
+   <script src="../dist/freedomplayer.js?i"></script>
    </head>
 
 <body>
@@ -27,7 +27,7 @@
     </div>
     <div id="player2"></div>
 
-    <video class="flowplayer" controls crossorigin="anonymous">
+    <video class="freedomplayer" controls crossorigin="anonymous">
        <source type="video/mp4" src="//edge.flowplayer.org/bauhaus.mp4">
        <track default label="English" src="//d12zt1n3pd4xhr.cloudfront.net/fp/subtitles-demo.vtt">
     </video>
@@ -41,7 +41,7 @@
       ratio: 0.417,
       clip: {
         preload: "none",
-        title: 'Flowplayer subtitles',
+        title: 'Freedom Player subtitles',
         subtitles: [{
           label: 'English',
           src: '//d12zt1n3pd4xhr.cloudfront.net/fp/subtitles-demo.vtt',
@@ -59,12 +59,11 @@
         ]
       }
     };
-    flowplayer(el, conf);
+    freedomplayer(el, conf);
     var conf2 = flowplayer.extend({}, conf, { nativesubtitles: true });
     conf2.clip.title = 'Native subtitles';
-    flowplayer(el2, conf2);
+    freedomplayer(el2, conf2);
     </script>
 
 
 </body>
-
