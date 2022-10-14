@@ -61,7 +61,7 @@ $('.fp-ui').on('click', function(e) {
 'default minimal full fat'.split(' ').forEach(function(name) {
 
   var el = $('<a>').txt(name).on('click', function() {
-    player.className = 'flowplayer fp-ui-shown fp-' + name + (no_flex ? ' no-flex' : '')
+    player.className = 'freedomplayer fp-ui-shown fp-' + name + (no_flex ? ' no-flex' : '')
 
     each('[name=bg]', function(el) {
       el.disabled = name == 'minimal'
