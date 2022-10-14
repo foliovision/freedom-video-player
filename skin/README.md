@@ -1,76 +1,76 @@
 
-# Freedom Player
+# The use of CSS classes
 
-[website](https://foliovision.com) | [demos](https://foliovision.com/player/demos) | [docs](https://flowplayer.com/player)
+## Timeline options
+`(no class)` – default
 
-## For the impatient
+`.flow-slim` – slim timeline
 
-1. [Download Freedom Player](https://github.com/foliovision/freedom-video-player/releases)
-2. Unzip
-3. Drop the folder under your server
+`.flow-full` – timeline above the buttons (YouTube style)
 
-## Minimal setup
+`.flow-fat` – tall timeline (Wistia style)
 
-```html
-<!DOCTYPE html>
 
-<head>
-   <!-- flowplayer depends on jQuery 1.7.1+ (for now) -->
-   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+## Modifiers
+`.flow-edgy` – no border radius in any element
 
-   <!-- flowplayer.js -->
-   <script type="text/javascript" src="flowplayer.min.js"></script>
 
-   <!-- player styling -->
-   <link rel="stylesheet" type="text/css" href="flowplayer/minimalist.css">
+## Iconsets (coming soon)
+`(no class)` – solid white
 
-</head>
+`.flow-outlined` – outline only
 
-<body>
+`.flow-edgy` – solid, no rounding
 
-   <!-- player 1 -->
-   <div class="flowplayer">
-      <video src="my-video.mp4"></video>
-   </div>
+`.flow-outlined.flow-edgy` – outlined, no rounding
 
-   <!-- player 2 -->
-   <div class="flowplayer">
-      <video>
-         <source type="video/webm" src="my-video2.webm">
-         <source type="video/mp4" src="my-video2.mp4">
-      </video>
-   </div>
 
-</body>
 
-```
+## Stripping out elements
+`.flow-fullscreen { display: none }`
 
-## API Samples
+`.flow-volume { display: none }`
 
-```js
-// listen to events on second player
-flowplayer(1).bind("load", function (e, api, video) {
+etc...
 
-}).bind("pause", function (e, api) {
 
-});
+## Brand coloring
+`.flow-controls { background-color: #373484 }` – controlbar background color
 
-// work with jQuery
-$(".flowplayer").bind("unload", function (e, api) {
+`.flow-color { background-color: #373484, fill: #ec6c4c }` – progress bars, play button & active menu items
 
-});
-```
+No stronger selector or `!important` is needed.
 
-## Reporting bugs
+## Skins
 
-Please read the [contributing guidelines](CONTRIBUTING.md) before reporting issues or submitting patches.
+**functional** = default settings
+**playful** = `.flow-fat`, 2 brand colors, play button background
+**minimal** = `.flow-minimal`
 
-## Running tests
+The minimal mode is a highly stripped mode when *not* in fullscreen mode. The timeline is not even clickable. In fullscreen all the configured buttons are visible and timeline is usable. Uses outlined icons.
 
-We do automated tests with Continuous Integration on a private server for now. The previous version Flowplayer 7 had  automated testing built-in.
+Playful skin uses Flowplayer colors by default:
 
-## License
+- `#016682` for controlbar
+- `#ec6c4c` as "flow-color"
 
-[GPL v3](LICENSE.md)
 
-Copyright (c) 2021 Foliovision s.r.o.
+
+
+## Effects
+
+`-grayscale` – apply "grayscale" effect for the video
+`-sepia` – apply "sepia" effect for the video
+`-blur` – apply "blur" effect for the video
+
+
+## Internal use
+`.flow-ui-shown` – controls are always shown when mouseovered, paused
+
+`.no-flex` – no flexbox support
+
+`.is-rtl` – RTL support
+
+`.flow-play.flow-visible` – while master play button is showing for 300ms
+
+
