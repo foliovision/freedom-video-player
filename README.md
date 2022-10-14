@@ -1,14 +1,12 @@
+# Freedom Player
 
-# Flowplayer
-
-[website](https://flowplayer.com) | [demos](https://flowplayer.com/demos/) | [docs](https://flowplayer.com/docs/)
+[website](https://foliovision.com) | [demos](https://foliovision.com/player/demos) | [docs](https://flowplayer.com/player)
 
 ## For the impatient
 
-1. [Download Flowplayer](https://flowplayer.com/download/)
+1. [Download Freedom Player](https://github.com/foliovision/freedom-video-player/releases)
 2. Unzip
 3. Drop the folder under your server
-
 
 ## Minimal setup
 
@@ -62,34 +60,16 @@ $(".flowplayer").bind("unload", function (e, api) {
 });
 ```
 
-## Compiling Flash
-
-- Download [Open Source Flex SDK, v4.5.1](http://opensource.adobe.com/wiki/display/flexsdk/Download+Flex+4.5)
-
-```
-export mxmlc=<PATH_TO>/flex_sdk_4.5.1.21328_mpl/bin/mxmlc
-cd ./flowplayer # this repository
-make flash
-```
-
 ## Reporting bugs
 
 Please read the [contributing guidelines](CONTRIBUTING.md) before reporting issues or submitting patches.
 
 ## Running tests
 
-Our automated test suite is sponsored by [BrowserStack](http://browserstack.com). Thanks you!
-
-### Running locally
-
-Tests are run on [BrowserStack](http://browserstack.com)
-
- * Install dependencies: `bundle install`
- * Setup broserstack tunnel: `java -jar features/support/BrowserStackTunnel.jar -f <your tunnel api key> /path/to/flowplayer/repo`
- * Run cucumber features: `rake username=<browserstack username> key=<broserstack automate api key> base_url=http://<something>.browserstack.com`
+We do automated tests with Continuous Integration on a private server for now. The previous version Flowplayer 7 had  automated testing built-in.
 
 ## License
 
-[GPL v3 with an ADDITIONAL TERM per GPL Section 7](LICENSE.md)
+[GPL v3](LICENSE.md)
 
-Copyright (c) 2012 Flowplayer Ltd
+Copyright (c) 2021 Foliovision s.r.o.
