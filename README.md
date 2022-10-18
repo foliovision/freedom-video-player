@@ -72,4 +72,4 @@ We do automated tests with Continuous Integration on a private server for now. T
 
 [GPL v3](LICENSE.md)
 
-Copyright (c) 2021 Foliovision s.r.o.
+Copyright (c) 2022 Foliovision s.r.o.
