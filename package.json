@@ -1,8 +1,8 @@
 {
-  "name": "flowplayer",
+  "name": "freedomplayer",
   "version": "7.2.12",
   "description": "The HTML5 video player for the web",
-  "main": "dist/flowplayer.js",
+  "main": "dist/freedomplayer.js",
   "directories": {
     "test": "test"
   },
@@ -14,12 +14,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/flowplayer/flowplayer.git"
+    "url": "git://github.com/foliovision/freedom-video-player.git"
   },
   "author": "",
   "license": "GPLv3",
   "bugs": {
-    "url": "https://github.com/flowplayer/flowplayer/issues"
+    "url": "https://github.com/foliovision/freedom-video-player/issues"
   },
   "jshintConfig": {
     "browser": true,
@@ -32,7 +32,6 @@
     "bean": "^1.0.15",
     "class-list": "~0.1.1",
     "computed-style": "^0.3.0",
-    "es5-shim": "^4.6.5",
     "extend-object": "~1.0.0",
     "is-function": "~1.0.2",
     "scriptjs": "^2.5.9"

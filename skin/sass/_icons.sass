@@ -1,13 +1,13 @@
 // icons (4 different sets are coming soon)
 @font-face
-  font-family: flowplayer
-  src: url("icons/flowplayer.eot?#iefix") format("embedded-opentype"), url("icons/flowplayer.woff2") format("woff2"), url("icons/flowplayer.woff") format("woff")
+  font-family: freedomplayer
+  src: url("icons/freedomplayer.eot?#iefix") format("embedded-opentype"), url("icons/freedomplayer.woff2") format("woff2"), url("icons/freedomplayer.woff") format("woff")
 
 .fp-icon
   display: inline-block
 
-  &:before
-    font-family: flowplayer
+  &:before, &:after
+    font-family: freedomplayer
     font-size: 1.7em
 
 .fp-airplay:before
@@ -34,20 +34,6 @@
   content: "\e007"
   display: flex
   line-height: 0
-
-.fp-share:before
-  content: "\e009"
-
-.fp-share2:before
-  content: "\e00a"
-
-.fp-twitter:before
-  content: "\e00c"
-  color: #1da1f2
-
-.fp-facebook:before
-  content: "\e00a"
-  color: #3b5998
 
 .fp-volumebtn:before
   content: "\e00b"

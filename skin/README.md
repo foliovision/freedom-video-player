@@ -49,7 +49,7 @@ No stronger selector or `!important` is needed.
 
 The minimal mode is a highly stripped mode when *not* in fullscreen mode. The timeline is not even clickable. In fullscreen all the configured buttons are visible and timeline is usable. Uses outlined icons.
 
-Playful skin uses Flowplayer colors by default:
+Playful skin uses Freedom Player colors by default:
 
 - `#016682` for controlbar
 - `#ec6c4c` as "flow-color"
@@ -72,5 +72,3 @@ Playful skin uses Flowplayer colors by default:
 `.is-rtl` – RTL support
 
 `.flow-play.flow-visible` – while master play button is showing for 300ms
-
-

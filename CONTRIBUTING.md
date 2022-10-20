@@ -20,4 +20,3 @@ All pull requests should be done against the `dev` branch!
 
 Never do commits to the `master` branch!
 
-

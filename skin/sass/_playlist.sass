@@ -1,11 +1,11 @@
-.flowplayer.fp-default-playlist
+.freedomplayer.fp-default-playlist
   .fp-prev, .fp-next
     position: absolute
-    top: 45%
+    top: calc(50% - 2em)
     opacity: 0.3
     transition: opacity 0.2s
     &:before
-      font-family: flowplayer
+      font-family: freedomplayer
       font-size: 2.8em
   .fp-prev
     left: 0.4em
@@ -48,7 +48,7 @@
       content: "\e311"
     .fp-next:before
       content: "\e312"
-.flowplayer.fp-custom-playlist
+.freedomplayer.fp-custom-playlist
   overflow: visible
   &, &.is-splash, &.is-poster, &.is-loading
     .fp-playlist

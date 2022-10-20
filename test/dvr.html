@@ -9,21 +9,21 @@
    <!-- site specific styling -->
    <style>
    body { font-family: avenir, sans-serif; max-width: 1000px; margin: 0 auto; padding: .6em;}
-   .flowplayer { width: 100%; }
+   .freedomplayer { width: 100%; }
    </style>
 
-   <!-- flowplayer depends on jQuery 1.7.1+ (for now) -->
+   <!-- freedomplayer depends on jQuery 1.7.1+ (for now) -->
    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
 
-   <!-- include flowplayer -->
-   <script src="../dist/flowplayer.js?i"></script>
+   <!-- include freedomplayer -->
+   <script src="../dist/freedomplayer.js?i"></script>
 
 </head>
 
 <body>
 
    <!-- the player -->
-   <div class="flowplayer"
+   <div class="freedomplayer"
       data-swf="../dist/flowplayer.swf"
       data-swf-hls="../dist/flowplayerhls.swf"
       data-dvr="true"
@@ -38,10 +38,9 @@
 
    <script>
    $(function() {
-   flowplayer().on('dvrwindow', function(ev, api, d) {
+   freedomplayer().on('dvrwindow', function(ev, api, d) {
      console.log('dvrwindow', d);
    });
    });
    </script>
 </body>
-
