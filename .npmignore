@@ -5,3 +5,4 @@ Gemfile*
 Makefile
 Rakefile
 .travis.yml
+.npmrc

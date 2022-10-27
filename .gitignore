@@ -7,3 +7,4 @@ test/movie
 node_modules
 npm-debug.log
 deps/branding.custom.min.js
+.npmrc
