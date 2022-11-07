@@ -1,6 +1,6 @@
 # Freedom Player
 
-[website](https://foliovision.com) | [demos](https://foliovision.com/player/demos) | [docs](https://flowplayer.com/player)
+[website](https://foliovision.com) | [demos](https://foliovision.com/player/demos) | [docs](https://foliovision.com/player)
 
 ## For the impatient
 
@@ -14,26 +14,23 @@
 <!DOCTYPE html>
 
 <head>
-   <!-- flowplayer depends on jQuery 1.7.1+ (for now) -->
-   <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
-
-   <!-- flowplayer.js -->
-   <script type="text/javascript" src="flowplayer.min.js"></script>
+   <!-- freedomplayer.js -->
+   <script type="text/javascript" src="freedomplayer.min.js"></script>
 
    <!-- player styling -->
-   <link rel="stylesheet" type="text/css" href="flowplayer/minimalist.css">
+   <link rel="stylesheet" type="text/css" href="freedomplayer/skin.css">
 
 </head>
 
 <body>
 
    <!-- player 1 -->
-   <div class="flowplayer">
+   <div class="freedomplayer">
       <video src="my-video.mp4"></video>
    </div>
 
    <!-- player 2 -->
-   <div class="flowplayer">
+   <div class="freedomplayer">
       <video>
          <source type="video/webm" src="my-video2.webm">
          <source type="video/mp4" src="my-video2.mp4">
@@ -48,14 +45,14 @@
 
 ```js
 // listen to events on second player
-flowplayer(1).bind("load", function (e, api, video) {
+freedomplayer(1).bind("load", function (e, api, video) {
 
 }).bind("pause", function (e, api) {
 
 });
 
 // work with jQuery
-$(".flowplayer").bind("unload", function (e, api) {
+$(".freedomplayer").bind("unload", function (e, api) {
 
 });
 ```
