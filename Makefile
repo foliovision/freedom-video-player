@@ -56,5 +56,7 @@ all: clean zip
 # shortcuts
 js: concat
 
+browserlist:
+	@ npx browserslist@latest --update-db
 
 .PHONY: dist skin deps

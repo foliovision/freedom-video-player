@@ -97,7 +97,7 @@
       transition: opacity .1s
       opacity: 0
 
-  &.fp-ui-shown, &.is-paused, &.is-mouseover, &.is-loading, &.is-seeking
+  &.fp-ui-shown, &.is-paused:not(.was-played), &.is-splash, &.is-mouseover, &.is-loading, &.is-seeking
     .fp-ui
       background-image: none
       > *
@@ -107,10 +107,8 @@
   .fp-header
     @extend %absolute
     top: 0
-    background-image: linear-gradient(to bottom, rgba(#000, .25), transparent)
     text-align: left
     height: 3em
-    transition: opacity 0.3s
     padding-left: .65em
 
     .fp-icon
@@ -123,6 +121,16 @@
 
     .fp-unload
       display: none
+
+  // touch devices get a shade over the player when controls are showing
+  &.is-mouseover.is-touch
+    .fp-ui
+      background: rgba(0,0,0,.6)
+
+  // touch devices do not need the shade as the whole player darkens on tap
+  &:not(.is-touch)
+    .fp-header
+      background-image: linear-gradient(to bottom, rgba(#000, .25), transparent)
 
   // TODO fix this
   .fp-help
@@ -207,7 +215,6 @@
       display: none
     svg
       position: absolute
-      pointer-events: none
       left: 0
       right: 0
       bottom: 0
@@ -236,6 +243,7 @@
     position: absolute;
     left: 0;
     height: 100%;
+    pointer-events: none
     svg
       pointer-events: auto
       &:active
