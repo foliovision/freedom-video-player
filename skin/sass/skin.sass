@@ -97,6 +97,7 @@
       transition: opacity .1s
       opacity: 0
 
+  // We avoid showing the interface if it was the initial tap to play the video (.was-played)
   &.fp-ui-shown, &.is-paused:not(.was-played), &.is-splash, &.is-mouseover, &.is-loading, &.is-seeking
     .fp-ui
       background-image: none
