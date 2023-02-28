@@ -1,0 +1,60 @@
+<!--
+Placing Freedom Player into Modulobox breaks the mobile controls as Modulobox runs e.preventDefault() on touch start on its wrapping div
+-->
+
+<!doctype html>
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- player skin -->
+   <link rel="stylesheet" type="text/css" href="../dist/skin/skin.css?f">
+
+   <!-- site specific styling -->
+   <style>
+   body { font-family: avenir, sans-serif; max-width: 1000px; margin: 0 auto; padding: .6em;}
+   .freedomplayer { width: 100%; }
+   </style>
+
+   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+   <!-- include freedomplayer -->
+   <script src="../dist/freedomplayer.js?i"></script>
+   <script>
+//flowplayer.conf.hlsQualities = [{level: -1, label: 'ABR' }, { level: 0, label: 'Low quality' }, { level: 7, label: 'High quality' }];
+//flowplayer.conf.hlsQualities = false;
+//flowplayer.conf.hlsQualities = 'drive';
+//flowplayer.conf.hlsQualities = [-1,0,7];
+   </script>
+
+</head>
+
+<body>
+
+   <div class="mobx-item">
+      <!-- the player -->
+      <div class="freedomplayer"
+         -data-engine="flash"
+         data-swf="../dist/flowplayer.swf"
+         data-swf-hls="../dist/flowplayerhls.swf"
+         data-rtmp="rtmp://s3b78u0kbtx79q.cloudfront.net/cfx/st"
+         -data-splash="//drive.cdn.flowplayer.org/202777/84049-snap.jpg"
+         data-hls-qualities="[-1,0,1]"
+         data-ratio=".4167">
+
+      <video -autoplay -preload="none" -data-title="Foo bar">
+         <source type="video/mp4" src="//edge.flowplayer.org/bauhaus.mp4">
+         </video>
+
+      </div>
+   </div>
+
+   <script>
+      jQuery( function($) {
+         $( '.mobx-item' ).on( 'touchstart', function(e) {
+            console.log( '.mobx-item breaks touchstart' );
+            return false;
+         });
+      } );
+   </script>
+
+</body>
