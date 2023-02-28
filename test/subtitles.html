@@ -2,19 +2,10 @@
 <!doctype html>
 <html>
 <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <!-- player skin -->
    <link rel="stylesheet" type="text/css" href="../dist/skin/skin.css?f" />
-
-   <!-- site specific styling -->
-   <style>
-   body {
-      font: 12px "Myriad Pro", "Lucida Grande", sans-serif;
-      text-align: center;
-      padding-top: 1%;
-   }
-   .freedomplayer { display: inline-block;  width: 30%; }
-   </style>
 
    <!-- include freedomplayer -->
    <script src="../dist/freedomplayer.js?i"></script>
@@ -23,9 +14,8 @@
 <body>
 
    <!-- the player -->
-   <div id="player">
-    </div>
-    <div id="player2"></div>
+   <div id="player"></div><br />
+   <div id="player2"></div><br />
 
     <video class="freedomplayer" controls crossorigin="anonymous">
        <source type="video/mp4" src="//edge.flowplayer.org/bauhaus.mp4">
