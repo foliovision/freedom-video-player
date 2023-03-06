@@ -266,6 +266,20 @@
   &.is-mouseover.is-disabled
     .fp-forward, .fp-rewind
       display: none
+  &.is-video-rewind.is-ready
+    .fp-rewind
+      display: block
+      opacity: 1
+      svg
+        display: block
+        opacity: 1
+  &.is-video-forward.is-ready
+    .fp-forward
+      display: block
+      opacity: 1
+      svg
+        display: block
+        opacity: 1              
 
   // bottom controls
   .fp-controls
