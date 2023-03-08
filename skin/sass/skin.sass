@@ -372,11 +372,17 @@
     display: -ms-flexbox
     display: flex
     height: 100%
-
     -ms-flex-align: center
     align-items: center
-  .fp-volumebtn
-    display: none
+  // TODO: Fix appearance glitch due to overflow: hidden
+  .fp-volumebar.fp-bar-slider
+    overflow: hidden
+    transition: width .2s
+    width: 0
+  // TODO: Make it easier to keep hovering
+  .fp-volume:hover .fp-volumebar
+    width: 56px
+
   .fp-bar-slider
     @extend .fp-bar
     background-color: transparent
