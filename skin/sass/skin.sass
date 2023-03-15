@@ -383,22 +383,14 @@
     height: 100%
     -ms-flex-align: center
     align-items: center
-  .fp-volume
-    .fp-volumebar
-      height: 0
-      position: absolute
-      top: -5em
-    &:hover
-      .fp-volumebar
-        height: 5em
-        // more space for mouseover
-        &:before
-          content: ""
-          height: 6.5em;
-          width: 3em;
-          position: absolute;
-          top: -1em;
-          left: -1em;
+  // TODO: Fix appearance glitch due to overflow: hidden
+  .fp-volumebar.fp-bar-slider
+    overflow: hidden
+    transition: width .2s
+    width: 0
+  // TODO: Make it easier to keep hovering
+  .fp-volume:hover .fp-volumebar
+    width: 56px
 
   .fp-bar-slider
     @extend .fp-bar
