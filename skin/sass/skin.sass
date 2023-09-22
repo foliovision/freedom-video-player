@@ -97,8 +97,16 @@
       transition: opacity .1s
       opacity: 0
 
-  // We avoid showing the interface if it was the initial tap to play the video (.was-played)
-  &.fp-ui-shown, &.is-paused, &.is-splash, &.is-mouseover, &.is-loading, &.is-seeking:not(.is-video-rewind):not(.is-video-forward)
+  /*
+   * Show the interface if
+   * - video is paused and was not yet played
+   * - video is paused, unless mouse is out on mobile
+   * - video is in splash state
+   * - mouse is over the player
+   * - video is loading
+   * - video is seeking, but not using the double-tap rewind/forward buttons
+   */
+  &.fp-ui-shown, &.is-paused:not(.was-played), &.is-paused:not(.is-mouseout.is-touch), &.is-splash, &.is-mouseover, &.is-loading, &.is-seeking:not(.is-video-rewind):not(.is-video-forward)
     .fp-ui
       background-image: none
       > *
