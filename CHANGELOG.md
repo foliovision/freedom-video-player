@@ -1,3 +1,15 @@
+Versions 7.2.15
+===============
+
+Enhancements
+------------
+
+API methods: is_playlist(), is_last_video(), get_video_index() and have_visible_playlist()
+Mobile double tap on left/right for quick 10 second seeking
+Mobile shows overlay controls on first tap.
+Resuming video should hide controls overlay on mobile immediatelly.
+Support video source URL loading via Ajax (Pro)
+
 Version 7.2.12
 =============
 

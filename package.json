@@ -1,6 +1,6 @@
 {
   "name": "freedomplayer",
-  "version": "7.2.14",
+  "version": "7.2.15",
   "description": "The HTML5 video player for the web",
   "main": "dist/freedomplayer.js",
   "directories": {
