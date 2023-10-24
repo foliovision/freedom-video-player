@@ -8,7 +8,9 @@ API methods: is_playlist(), is_last_video(), get_video_index() and have_visible_
 Mobile double tap on left/right for quick 10 second seeking
 Mobile shows overlay controls on first tap.
 Resuming video should hide controls overlay on mobile immediatelly.
+Subtitles - fix for RTL languages when the line contains latin word - thanks to Olivier Legendre
 Support video source URL loading via Ajax (Pro)
+
 
 Version 7.2.12
 =============
