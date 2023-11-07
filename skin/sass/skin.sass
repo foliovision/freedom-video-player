@@ -104,6 +104,11 @@
       background-image: none
       > *
         opacity: 1
+      .fp-controls > *
+        opacity: 1
+  &.is-mobile-seeking
+    .fp-timeline, .fp-forward, .fp-rewind
+      opacity: 1
 
   // topmost elements and actions
   .fp-header
@@ -309,9 +314,11 @@
     z-index: 2
     padding-left: 0.3em
     padding-right: 0.3em
+    opacity: 1;
 
     > *
       margin: 0 .6em
+      opacity: 0;
 
     strong
       margin: 0;
@@ -717,7 +724,7 @@
     transform: scale(1.00)
 
 .fp-preload
-  transition: opacity .3s .1s
+  transition: opacity 1s .3s
   position: static
   top: 0
   bottom: 0
@@ -728,11 +735,12 @@
   display: block
   height: 0
 
-.fp-waiting .fp-preload
-  position: absolute
-  display: block
-  height: 2em
-  opacity: 0.8
+.is-loading, .is-seeking
+  .fp-waiting .fp-preload
+    position: absolute
+    display: block
+    height: 2em
+    opacity: 0.8
 
 .fp-preload b
   animation: waiting 1s ease-in-out infinite
