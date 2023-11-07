@@ -62,11 +62,6 @@
 
   .fp-waiting
     display: none
-    // no svg support
-    p
-      opacity: 0
-      color: #ccc
-      font-weight: bold
 
   // preload
   .fp-ui .fp-preload
@@ -218,7 +213,7 @@
       transform: scale(1.00)
 
   // the big play button on center
-  .fp-play, .fp-pause, .fp-waiting, .fp-forward, .fp-rewind
+  .fp-play, .fp-pause, .fp-forward, .fp-rewind
     .fp-playbtn
       display: none
     svg
@@ -640,7 +635,7 @@
     width: auto
 
   &.fp-outlined
-    .fp-play, .fp-pause, .fp-waiting
+    .fp-play, .fp-pause
       svg.fp-play-rounded-fill, svg.fp-pause-rounded-fill
         display: none
       svg.fp-play-rounded-outline, svg.fp-pause-rounded-outline
