@@ -134,8 +134,14 @@
     .fp-fullscreen, .fp-unload, .fp-airplay, .fp-chromecast
       float: right
 
-    .fp-unload
+    // fullscreen and unload buttons in header are hidden
+    // it's up to use to use CSS to reveal it and hide them in the controlbar
+    .fp-fullscreen, .fp-unload
       display: none
+
+  // unload button is hidden by default no matter where it is
+  .fp-unload
+    display: none
 
   // touch devices get a shade over the player when controls are showing
   &.is-mouseover.is-touch
