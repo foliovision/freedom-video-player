@@ -137,8 +137,9 @@
 
   // touch devices do not need the shade as the whole player darkens on tap
   &:not(.is-touch)
-    .fp-header
-      background-image: linear-gradient(to bottom, rgba(#000, .25), transparent)
+    &.fp-slim.is-mouseover-bottom, &.fp-slim:not(.was-played)
+      .fp-ui
+        background-image: linear-gradient(to top, rgba(0, 0, 0, .25), transparent 15%)
 
   // TODO fix this
   .fp-help
