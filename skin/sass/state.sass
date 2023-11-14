@@ -33,7 +33,7 @@
     .fp-player
       background-color: #333
     .fp-fullscreen:before
-      content: "\e00f"
+      background: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='-1 -2 40 30' fill='none' stroke-width='3' stroke='whitesmoke' xmlns:xlink='http://www.w3.org/1999/xlink'><path d='M1 9V1h12' transform='translate(22 17)' /><path d='M1 9V1h12' transform='matrix(-1 0 0 1 13 17)' /><path d='M1 9V1h12' transform='rotate(180 6.5 4.5)' /><path d='M1 9V1h12' transform='matrix(1 0 0 -1 22 9)' /></svg>");
     top: 0 !important
     left: 0 !important
     border: 0 !important
@@ -47,15 +47,6 @@
     background-color: #333
     border-radius: 0
 
-  &.is-fullscreen.fp-outlined
-    .fp-fullscreen:before
-      content: "\e30f"
-  &.is-fullscreen.fp-edgy
-    .fp-fullscreen:before
-      content: "\e10f"
-  &.is-fullscreen.fp-edgy.fp-outlined
-    .fp-fullscreen:before
-      content: "\e30f"
   &.is-fullscreen.is-mouseout.is-playing
     .fp-ui
       cursor: none
