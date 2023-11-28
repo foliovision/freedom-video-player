@@ -1,3 +1,85 @@
+Version 7.2.12
+=============
+
+Fixes
+-----
+
+* Android - prevent error on console if no video tag on ready event is present (YouTube)
+
+Version 7.2.11
+=============
+
+Fixes
+-----
+
+* iOS - do not show volume control on iPad as it's not supported
+* Timeline - prevent overflow for live streams is the live flag is not set
+
+
+Version 7.2.10
+=============
+
+Fixes
+-----
+
+* HLS.js - get proper video dimensions, previously it would report 0
+* Performance - no requestAnimationFrame for CSS classes
+
+Version 7.2.9
+=============
+
+Fixes
+-----
+
+* Fix error trigger for missing subtitles to pass proper data to API
+* Fullscreen - fix for Safari 12 and above (this fix was lost in FV Player)
+* Volume slider - make it easier to mute the video by dragging it all the way to the left
+
+Version 7.2.8
+=============
+
+Enhancements
+------------
+
+ * Keyboard controls work for the player which is hovered, not depending on a click anymore
+ * Timeline tooltip shows on timeline dragging on mobile, with no seeking in media file
+
+Fixes
+-----
+
+ * Airplay button fix for incompatible playlist items
+ * Do not break the video load if subtitle file is missing
+ * Do not remove error messages on progess event
+ * Enabling subtitles in middle of the subtitle entry shows the subtitle line right away
+ * Fix multiple player hover events if iframe is placed on top of it
+ * Fixing bar-slider to work even when you drag out of its boundaries.
+
+Version 7.2.7
+=============
+
+Enhancements
+------------
+
+ * add bufferWhilePaused: true/false option (#1388)
+
+Fixes
+-----
+
+ * Fix #1363 - Subtitle endtime not respected, remain on screen until next subtitle
+ * Fix #1376 - Android Chrome playlist DOM exception on playlist transition
+ * Fix #1404 - Android 9: Exception on plugin load due to issue with UA parsing
+ * Fix #1398 - DVR allows to seek to unsafe positions
+ * Fix #1375 - 7.2.6 splash Android Chrome DOM Exception
+ * Fix #1360 - Unnecessary DOM searches in loop
+ * Fix #1394 - Loading animation not visible when buffering in playing state
+ * Fix #1365 - Unloading the player does not stop manifest loading
+ * Fix #1389 - Unloading the player might result in a media error
+ * Fix #1393 - HLS.js instance is globally shared between all players in the page
+ * Fix #1395 - HLS instance not correctly cleared on load
+ * Fix #1385 - Bad playlist behavior on repeated playback when using splash setup
+ * Fix #1354 - hlsjs-lite does not honor hlsjs: false
+ * Fix #1383 - Configured ABR quality ignored
+
 Version 7.2.6
 =============
 

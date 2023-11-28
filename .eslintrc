@@ -2,7 +2,9 @@
   "rules": {
     "indent": "off",
     "no-empty": ["error", { "allowEmptyCatch": true }],
-    "no-console": "off"
+    "no-console": "off",
+    "no-prototype-builtins": "off",
+    "no-unused-vars": "warn"
   },
   "extends": "eslint:recommended",
   "env": {

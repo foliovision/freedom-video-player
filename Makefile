@@ -27,7 +27,7 @@ CDN_PATH=""
 # https://flowplayer.com/license
 concat: raw
 	# flowplayer.js
-	@ node -e "var fs = require('fs'), js=fs.readFileSync('$(JS)', 'utf8'); process.stdout.write(js.replace('//BRANDING', fs.readFileSync('deps/branding.min.js', 'utf8')));" > $(JS).tmp
+	@ node -e "var fs = require('fs'), js=fs.readFileSync('$(JS)', 'utf8'), branding = fs.existsSync('deps/branding.custom.min.js') ? 'deps/branding.custom.min.js' : 'deps/branding.min.js'; process.stdout.write(js.replace('//BRANDING', fs.readFileSync(branding, 'utf8')));" > $(JS).tmp
 	@ mv $(JS).tmp $(JS)
 
 # the raw / non-working player without branding
@@ -42,13 +42,13 @@ raw:
 
 min: concat
 	# flowplayer.min.js
-	@ uglifyjs $(JS) --comments '/flowplayer.com\/license/' --mangle -c >> $(DIST)/flowplayer.min.js
+	@ uglifyjs $(JS) --comments '/foliovision.com\/player\/legal\/freedom-player-license/' --compress --mangle --output $(DIST)/flowplayer.min.js
 
 # make all skins
 skin:
 	# skins
 	@ mkdir -p $(SKIN)
-	@ node-sass skin/sass/skin.sass | postcss -c postcss.config.json > $(SKIN)/skin.css
+	@ node-sass skin/sass/skin.sass | postcss > $(SKIN)/skin.css
 	@ cp -r skin/icons $(SKIN)
 
 flash:
