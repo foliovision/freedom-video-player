@@ -477,7 +477,7 @@
     .fp-timeline
       height: .2em
 
-    &:not(.fp-full) .fp-controls:hover .fp-timeline:before, .fp-controls:hover .fp-bar-slider:before
+    &:not(.fp-full) .fp-controls:hover .fp-timeline:before, &:not(.fp-full).is-mobile-seeking .fp-timeline:before, .fp-controls:hover .fp-bar-slider:before
       content: ''
       position: absolute
       top: -1.2em
