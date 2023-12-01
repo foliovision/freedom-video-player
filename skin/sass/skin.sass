@@ -262,24 +262,27 @@
     display: none
 
   .fp-rewind, .fp-forward
-    width: 9%;
-    position: absolute;
-    left: 0;
+    width: 9vw
+    position: absolute
+    left: 0
     height: 54%
     top: 50%
     transform: translateY(-50%)
+    @include screen('portrait')
+      width: 14vw
     svg
-      max-width: 14vw;
-      width: 2em;
+      max-width: 14vw
+      width: 2em
       transform: none
       &:active
         transform: scale(0.90)
   .fp-forward
     left: auto
-    right: 0;
+    right: 0
     svg
       margin-left: 0
   .fp-rewind
+    left: 0
     svg
       margin-right: 0
   &.is-mouseover.is-ready
