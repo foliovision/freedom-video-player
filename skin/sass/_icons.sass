@@ -1,7 +1,7 @@
 // icons (4 different sets are coming soon)
 @font-face
   font-family: freedomplayer
-  src: url("icons/freedomplayer.eot?#iefix") format("embedded-opentype"), url("icons/freedomplayer.woff2") format("woff2"), url("icons/freedomplayer.woff") format("woff")
+  src: url("icons/freedomplayer.woff2") format("woff2"), url("icons/freedomplayer.woff") format("woff")
 
 .fp-icon
   display: inline-block
@@ -10,23 +10,8 @@
     font-family: freedomplayer
     font-size: 1.7em
 
-.fp-airplay svg
-  fill: whitesmoke
-  vertical-align: text-top
-  width: 18px
-
 .fp-fullscreen
-  height: 16px
   order: 100
-  svg
-    vertical-align: text-top
-    stroke: whitesmoke
-    stroke-width: 7
-    width: 22px
-    &.fp-fullscreen-exit
-      display: none
-      fill: none
-      stroke-width: 3
 
 .fp-checked:before
   content: "\e003"
@@ -36,13 +21,7 @@
   color: #fff
 
 .fp-controls a.fp-chromecast
-  height: 16px
   margin: 0 0.5em
-
-.fp-chromecast svg
-  vertical-align: text-top
-  stroke: whitesmoke
-  width: 20px
 
 .fp-email:before
   content: "\e006"
@@ -67,3 +46,15 @@
 
 .fp-nextbtn:before
   content: "\e012"
+
+.fp-chromecast:before
+  content: "\e900"
+
+.fp-fullscreen:before
+  content: "\e901"
+
+.is-fullscreen .fp-fullscreen:before
+  content: "\e902"
+
+.fp-airplay:before
+  content: "\e903"

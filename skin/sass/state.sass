@@ -32,12 +32,12 @@
   &.is-fullscreen
     .fp-player
       background-color: #333
-    .fp-fullscreen svg.fp-fullscreen-exit
-      display: block
-    .fp-fullscreen svg.fp-fullscreen-enter
-      display: none
-    .fp-fullscreen.bold svg.fp-fullscreen-exit
-      stroke-width: 5
+    .fp-fullscreen.bold
+      font-weight: 600
+    @supports (-webkit-text-stroke-width: 1px)
+      .fp-fullscreen.bold
+        -webkit-text-stroke-width: 1px
+        font-weight: 400
     top: 0 !important
     left: 0 !important
     border: 0 !important
