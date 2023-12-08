@@ -263,7 +263,7 @@
     display: none
 
   .fp-rewind, .fp-forward
-    width: 9vw
+    width: 18vw
     position: absolute
     left: 0
     height: 54%
@@ -279,13 +279,23 @@
         transform: scale(0.90)
   .fp-forward
     left: auto
+    padding-left: 9vw
+    @include screen('portrait')
+      padding-left: auto
     right: 0
     svg
-      margin-left: 0
+      margin-left: 9vw
+      @include screen('portrait')
+        margin-left: 0
   .fp-rewind
     left: 0
+    padding-right: 9vw
+    @include screen('portrait')
+      padding-right: auto
     svg
-      margin-right: 0
+      margin-right: 9vw
+      @include screen('portrait')
+        margin-right: 0
   &.is-mouseover.is-ready
     .fp-forward, .fp-rewind
       display: block
@@ -372,12 +382,6 @@
       > *
         transition: none
 
-  .fp-bar-vertical
-    cursor: row-resize
-    width: .9em
-    > *
-      bottom: 0
-      width: 100%
 
   // timeline
   .fp-timeline
@@ -481,7 +485,7 @@
     .fp-timeline
       height: .2em
 
-    &:not(.fp-full) .fp-controls:hover .fp-timeline:before, .fp-controls:hover .fp-bar-slider:before
+    &:not(.fp-full) .fp-controls:hover .fp-timeline:before, &:not(.fp-full).is-mobile-seeking .fp-timeline:before, .fp-controls:hover .fp-bar-slider:before
       content: ''
       position: absolute
       top: -1.2em
