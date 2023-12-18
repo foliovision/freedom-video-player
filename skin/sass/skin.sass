@@ -99,7 +99,7 @@
   // - mouse is over the player
   // - video is loading
   // - video is seeking, but not using the double-tap rewind/forward buttons
-  &.fp-ui-shown, &.is-paused:not(.was-played), &.is-splash, &.is-mouseover, &.is-loading, &.is-seeking:not(.is-mobile-seeking)
+  &.fp-ui-shown, &.is-paused:not(.was-played), &.is-splash, &.is-mouseover:not(.is-mouseover-top), &.is-loading, &.is-seeking:not(.is-mobile-seeking)
     .fp-ui
       > *
         opacity: 1
@@ -110,7 +110,7 @@
   &:not(.is-touch):not(.is-mouseover-top).was-played
     .fp-header
       opacity: 0
-  &:not(.is-touch):not(.is-mouseover-bottom):not(.fixed-controls).was-played
+  &:not(.is-touch):not(.is-mouseover-bottom):not(.is-fullscreen-exit-hint):not(.fixed-controls).was-played
     .fp-controls
       opacity: 0
 
@@ -121,6 +121,13 @@
     .fp-timeline, .fp-forward, .fp-rewind
       opacity: 1
       visibility: visible
+  &.is-fullscreen-exit-hint
+    .fp-controls
+      opacity: 1
+      visibility: hidden
+    .fp-timeline, .fp-fullscreen
+      opacity: 1
+      visibility: visible      
 
   // topmost elements and actions
   .fp-header
