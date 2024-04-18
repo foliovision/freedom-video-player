@@ -1,0 +1,85 @@
+.freedomplayer.fp-edgy {
+  .fp-play,
+  .fp-pause {
+    svg.fp-play-rounded-fill,
+    svg.fp-pause-rounded-fill,
+    svg.fp-play-rounded-outline,
+    svg.fp-pause-rounded-outline {
+      display: none !important;
+    }
+    svg.fp-play-sharp-fill,
+    svg.fp-pause-sharp-fill {
+      display: block;
+    }
+  }
+  &,
+  .fp-menu,
+  .fp-captions p,
+  .fp-textarea,
+  .fp-bar,
+  .fp-bar > *,
+  .fp-timestamp {
+    border-radius: 0;
+  }
+  .fp-checked::before {
+    content: "\e103";
+  }
+  .fp-email::before {
+    content: "\e106";
+  }
+  .fp-playbtn::before {
+    content: "\e107";
+  }
+  .fp-volumebtn::before {
+    content: "\e10b";
+  }
+  .fp-volume-off::before {
+    content: "\e10d";
+  }
+  .fp-unload::before {
+    content: "\e10f";
+  }
+  .fp-prevbtn::before {
+    content: "\e111";
+  }
+  .fp-nextbtn::before {
+    content: "\e112";
+  }
+  &.fp-outlined {
+		.fp-play,
+    .fp-pause {
+      svg.fp-play-sharp-fill,
+      svg.fp-pause-sharp-fill {
+        display: none;
+      }
+      svg.fp-play-sharp-outline,
+      svg.fp-pause-sharp-outline {
+        display: block;
+      }
+    }
+    .fp-checked::before {
+      content: "\e303";
+    }
+    .fp-email::before {
+      content: "\e306";
+    }
+    .fp-playbtn::before {
+      content: "\e307";
+    }
+    .fp-volumebtn::before {
+      content: "\e30b";
+    }
+    .fp-volume-off::before {
+      content: "\e30d";
+    }
+    .fp-unload::before {
+      content: "\e30f";
+    }
+    .fp-prevbtn::before {
+      content: "\e311";
+    }
+    .fp-nextbtn::before {
+      content: "\e312";
+    }
+  }
+}

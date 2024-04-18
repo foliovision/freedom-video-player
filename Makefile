@@ -23,7 +23,6 @@ raw:
 	# raw player
 	@ mkdir	-p $(DIST)
 	@ cat LICENSE.js | $(SET_VERSION) | $(SET_DATE) > $(JS)
-	@ cat node_modules/ie8/build/ie8.js >> $(JS)
 	@ echo >> $(JS)
 	@ browserify -t brfs -p browserify-derequire -s freedomplayer lib/index.js | $(SET_VERSION) >> $(JS)
 
@@ -35,8 +34,9 @@ min: concat
 skin:
 	# skins
 	@ mkdir -p $(SKIN)
-	@ node-sass skin/sass/skin.sass | postcss > $(SKIN)/skin.css
-	@ cp -r skin/icons $(SKIN)
+	@ postcss skin/css/skin.css -u postcss-import -u autoprefixer -u postcss-preset-env --map --map.sourcesContent true --map.annotation $(SKIN)/skin.css.map -o $(SKIN)/skin.css
+	@ postcss skin/css/skin.css -u postcss-import -u autoprefixer -u postcss-preset-env -u cssnano --no-map -o $(SKIN)/skin.min.css
+	@ cp -u skin/icons/freedomplayer.woff* $(SKIN)/icons/
 
 zip: min concat skin
 	@ cp index.html $(DIST)

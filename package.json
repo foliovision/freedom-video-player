@@ -37,24 +37,16 @@
     "scriptjs": "^2.5.9"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.16",
     "brfs": "^2.0.2",
     "browserify": "^17.0.0",
     "browserify-derequire": "^1.1.1",
-    "ie8": "=0.8.1",
+    "cssnano": "^6.0.2",
     "mochify": "~9.2.0",
-    "node-sass": "^7.0.3",
-    "postcss": "^8.4.18",
-    "postcss-cli": "^10.0.0",
-    "postcss-unopacity": "^2.0.0",
+    "postcss": "^8.4.32",
+    "postcss-cli": "^10.1.0",
+    "postcss-import": "^15.1.0",
+    "postcss-preset-env": "^9.3.0",
     "uglify-js": "^3.17.3"
-  },
-  "postcss": {
-    "plugins": {
-      "autoprefixer": {},
-      "postcss-unopacity": {
-        "method": "copy"
-      }
-    }
   }
 }
