@@ -50,6 +50,12 @@
     background-image: none !important
     background-color: #333
     border-radius: 0
+    .fp-controls
+      bottom: env(safe-area-inset-bottom)
+    .fp-full .fp-timeline
+      margin-left: env(safe-area-inset-bottom);
+      margin-right: env(safe-area-inset-bottom);
+      width: calc( 100% - 2 * env(safe-area-inset-bottom) )
 
   &.is-fullscreen.is-mouseout.is-playing
     .fp-ui
