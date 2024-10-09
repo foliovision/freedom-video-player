@@ -3,7 +3,7 @@ freedomplayer(function(player, root) {
 
     if ( typeof player.conf.logo === 'undefined' ) return;
 
-    if( root.querySelector('fp-logo') ) root.querySelector('fp-logo').remove();
+    if( root.querySelector('.fp-logo') ) root.querySelector('.fp-logo').remove();
 
     var logo = document.createElement("a");
 
