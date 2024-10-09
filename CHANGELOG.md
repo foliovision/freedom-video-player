@@ -1,15 +1,54 @@
-Versions 7.2.15
+Version 8.0.7
+=============
+
+Enhancements
+------------
+
+* Airplay: Support for FV Player's skin preview
+* Autoplay: Add .autoplay-failed if failed
+* CSS: whitesmoke is the new default color instead of white
+* Desktop: Only show controlbar when hovering the buttom part of player, while in fullscreen
+* Fullscreen: Allow api.conf.fullscreen to change when player is loaded
+* Fullscreen: Support for FV Player's skin preview
+* Hide native iOS subtitles if custom subtitles are available
+* Keyboard: , and . for 1 frame rewind/forward seek
+* Mobile: Ovelay controls showing on first tap
+* Mobile: Forward/rewind buttons
+* Move fullscreen to controlbar
+* New fullscreen, Airplay and Chromecast buttons
+* Only show seeking indicator after half second
+* Preload: Show preloaded video
+
+Fixes
+-----
+
+* Avoid duplicate logo image markup when switching playlist items
+* Avoid error if calling unload improperly
+* Desktop hover: Avoid hover slim controls shadow in splash state
+* Fix timeline stuck in non-seekable state in rate cases. The video might not be seekable on ready event, but can become seekable later
+* Preload: Mobile: Avoid video start if preloading and scrolling by starging drag on player
+* Preload: Viewport check fix for multiple instances: Previously the next instance would unhook the event for the previous one
+* Timeline: Easier to tap beginning when slim
+* .no-controlbar: Hide control bar and mobile overlay/seeking controls
+
+Security
+--------
+
+* Fix logo image source sanitization
+
+
+Version 7.2.15
 ===============
 
 Enhancements
 ------------
 
-API methods: is_playlist(), is_last_video(), get_video_index() and have_visible_playlist()
-Mobile double tap on left/right for quick 10 second seeking
-Mobile shows overlay controls on first tap.
-Resuming video should hide controls overlay on mobile immediatelly.
-Subtitles - fix for RTL languages when the line contains latin word - thanks to Olivier Legendre
-Support video source URL loading via Ajax (Pro)
+* API methods: is_playlist(), is_last_video(), get_video_index() and have_visible_playlist()
+* Mobile double tap on left/right for quick 10 second seeking
+* Mobile shows overlay controls on first tap.
+* Resuming video should hide controls overlay on mobile immediatelly.
+* Subtitles - fix for RTL languages when the line contains latin word - thanks to Olivier Legendre
+* Support video source URL loading via Ajax (Pro)
 
 
 Version 7.2.12
