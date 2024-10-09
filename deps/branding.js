@@ -5,10 +5,12 @@ freedomplayer(function(player, root) {
 
     if( root.querySelector('.fp-logo') ) root.querySelector('.fp-logo').remove();
 
-    var logo = document.createElement("a");
+    var image = document.createElement("img");
+    image.src = player.conf.logo;
 
+    var logo = document.createElement("a");
     logo.className = 'fp-logo';
-    logo.innerHTML = '<img src="'+ player.conf.logo +'">';
+    logo.appendChild(image);
 
     var fp_player = root.querySelector(".fp-player");
 
