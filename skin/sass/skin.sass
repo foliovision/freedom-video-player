@@ -89,7 +89,8 @@
       color: inherit !important
       font-style: normal !important
       text-decoration: none !important
-    > *
+    > div,
+    > p
       transition: opacity .1s
       opacity: 0
 
@@ -101,7 +102,8 @@
   // - video is seeking, but not using the double-tap rewind/forward buttons
   &.fp-ui-shown, &.is-paused:not(.was-played), &.is-splash, &.is-mouseover:not(.is-fullscreen.is-mouseover-top), &.is-loading, &.is-seeking:not(.is-mobile-seeking)
     .fp-ui
-      > *
+      > div,
+      > p
         opacity: 1
       .fp-controls > *
         opacity: 1
