@@ -105,7 +105,10 @@
       > div,
       > p
         opacity: 1
-      .fp-controls > *
+      .fp-controls > a,
+      .fp-controls > div,
+      .fp-controls > span,
+      .fp-controls > strong
         opacity: 1
 
   // Allow controlbar to show in splash/poster state (before video was player) even if mouse is not over the player
@@ -353,7 +356,10 @@
     padding-left: 0.3em
     padding-right: 0.3em
 
-    > *
+    > a,
+    > div,
+    > p,
+    > span
       margin: 0 .6em
       opacity: 0;
 
@@ -562,7 +568,10 @@
     .fp-controls
       background-color: transparent !important
 
-      > *
+      > a,
+      > div,
+      > span,
+      > strong
         display: none
 
     .fp-header
