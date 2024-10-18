@@ -1,3 +1,18 @@
+Version 8.0.8
+=============
+
+Enhancements
+------------
+
+* CSS: Getting rid of ... > * selectors for performance reasons.
+* Performance: requestAnimationFrame and debounce for CSS classes. It's better to use requestAnimationFrame to avoid redraw as JavaScript makes the changes.
+
+Fixes
+-----
+
+* branding: Show before starting video
+* .no-controls: Hide control bar and mobile overlay/seeking controls: Not if we have buttons above control bar
+
 Version 8.0.7
 =============
 
