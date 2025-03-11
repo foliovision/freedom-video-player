@@ -2,6 +2,7 @@
 <!doctype html>
 <html>
 <head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
    <!-- player skin -->
    <link rel="stylesheet" type="text/css" href="../dist/skin/skin.css?f" />
@@ -13,7 +14,6 @@
       text-align: center;
       padding-top: 1%;
    }
-   .freedomplayer { width: 70%; }
    </style>
    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
    <!-- include freedomplayer -->
@@ -29,16 +29,21 @@
     <script>
     var el = document.getElementById('player');
     var api = freedomplayer(el, {
-        ratio: 0.417,
-        live: true,
+        ratio: 9/16,
+        // It should load in Safari even if this is disabled
+        //live: true,
         nativesubtitles: true,
         clip: {
           sources: [
             {
               type: "application/x-mpegurl",
-              src: "http://wms.shared.streamshow.it/carinatv/carinatv/playlist.m3u8"
+              src: "https://stream.mux.com/v69RSHhFelSm4701snP22dYz2jICy4E4FUyk02rW4gxRM.m3u8"
             }
           ]
+        },
+        hlsjs: {
+          // It should load in Safari even if this is disabled
+          //safari: true
         }
       });
     api.on('load', function(ev, player, video) {
