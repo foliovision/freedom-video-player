@@ -1,0 +1,53 @@
+
+<!doctype html>
+
+<head>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <!-- player skin -->
+   <link rel="stylesheet" type="text/css" href="../dist/skin/skin.css?f">
+
+   <!-- freedomplayer depends on jQuery 1.7.1+ (for now) -->
+   <script src="//ajax.googleapis.com/ajax/libs/jquery/1/jquery.js"></script>
+
+   <!-- include freedomplayer -->
+   <script src="../dist/freedomplayer.js?i"></script>
+
+</head>
+
+<body>
+
+
+   <h1>Accessibility</h1>
+   <p>You can skip to the video using tab key.</p>
+   <p>Here's some text with an empty link to <a href="#">something else</a>.</p>
+   <p>Another link going nowhere: <a href="#">link</a>.</p>
+
+   <!-- the player -->
+   <div class="freedomplayer"
+      -data-splash="//drive.cdn.flowplayer.org/202777/84049-snap.jpg"
+      data-hls-qualities="[-1,0,1]"
+      data-ratio=".4167">
+
+     <video -autoplay -preload="none" -data-title="Foo bar">
+        <source type="video/mp4" src="//edge.flowplayer.org/bauhaus.mp4">
+      </video>
+
+   </div>
+
+   <div class="freedomplayer"
+      -data-splash="//drive.cdn.flowplayer.org/202777/84049-snap.jpg"
+      data-hls-qualities="[-1,0,1]"
+      data-ratio=".4167">
+
+     <video -autoplay -preload="none" -data-title="Foo bar">
+        <source type="video/mp4" src="//edge.flowplayer.org/bauhaus.mp4">
+      </video>
+
+   </div>
+
+   <p>Here a HTML5 video tag:</p>
+   <video controls>
+      <source type="video/mp4" src="//edge.flowplayer.org/bauhaus.mp4">
+    </video>
+
+</body>
