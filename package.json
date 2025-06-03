@@ -29,7 +29,7 @@
     "multistr": true
   },
   "dependencies": {
-    "bean": "^1.0.15",
+    "bean": "github:foliovision/bean",
     "class-list": "~0.1.1",
     "computed-style": "^0.3.0",
     "extend-object": "~1.0.0",
