@@ -1,3 +1,30 @@
+Version 8.0.20
+=============
+
+Enhancements
+------------
+
+* Accessibility improvements: Allow tab key for player, do not break it on mouse hover
+* Chromecast: Use the new Web Sender Framework API
+* Errors: Support custom_message property
+* Fix issues with touch events not being passive
+* Fullscreen: Allow api.conf.fullscreen to change when player is loaded
+* Hide native iOS subtitles if custom subtitles are available: Show if native fullscreen
+* Hooks for custom video duration, start and end time (FV Player Pro)
+* Menu: Delay menu closing to give user visual feedback of what was selected
+* Subtitles: Loading native subtitles should not give up custom display
+
+Fixes
+-----
+
+* Airplay: Fix for multiple instances
+* Chromecast button: Fix CSS coloring
+* CSS: fp-menu z-index 21
+* Fix nativesubtitles for iOS 18
+* Fullscreen button: Ensure fill is transparent
+* Preload: remove is-poster when video plays
+* RTL: Fix buffer direction
+
 Version 8.0.8
 =============
 
