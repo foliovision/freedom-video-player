@@ -23,20 +23,20 @@ raw:
 	# raw player
 	@ mkdir	-p $(DIST)
 	@ cat LICENSE.js | $(SET_VERSION) | $(SET_DATE) > $(JS)
-	@ cat node_modules/ie8/build/ie8.js >> $(JS)
 	@ echo >> $(JS)
 	@ browserify -t brfs -p browserify-derequire -s freedomplayer lib/index.js | $(SET_VERSION) >> $(JS)
 
 min: concat
 	# freedomplayer.min.js
-	@ uglifyjs $(JS) --comments '/foliovision.com\/player\/legal\/freedom-player-license/' --compress --mangle --output $(DIST)/freedomplayer.min.js
+	@ npx uglifyjs $(JS) --comments '/foliovision.com\/player\/legal\/freedom-player-license/' --compress --mangle --output $(DIST)/freedomplayer.min.js
 
 # make all skins
 skin:
 	# skins
-	@ mkdir -p $(SKIN)
-	@ node-sass skin/sass/skin.sass | postcss > $(SKIN)/skin.css
-	@ cp -r skin/icons $(SKIN)
+	@ mkdir -p $(SKIN) $(SKIN)/icons
+	@ npx lightningcss --bundle --browserslist --minify --output-file $(SKIN)/skin.css skin/css/skin.css
+	@ ex -sc '1i|@charset \"UTF-8\";' -cx $(SKIN)/skin.css
+	@ cp -p skin/icons/freedomplayer.woff* $(SKIN)/icons/
 
 zip: min concat skin
 	@ cp index.html $(DIST)

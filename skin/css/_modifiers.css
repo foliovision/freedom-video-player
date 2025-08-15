@@ -1,20 +1,33 @@
-.freedomplayer
-  &.no-buffer
-    .fp-ui .fp-controls .fp-timeline .fp-buffer
-      display: none
-  &.no-controlbar
-    .fp-controls
-      visibility: hidden
-    &.is-muted
-      .fp-controls .fp-volume
-        order: 101
-      .fp-controls .fp-volumebtn
-        visibility: visible
-        display: block
-      .fp-controls .fp-volumebar
-        display: none
-    .fp-forward, .fp-rewind
-      visibility: hidden
-  &.no-volume
-    .fp-volumebar
-      display: none
+.freedomplayer {
+  &.no-buffer {
+    .fp-ui .fp-controls .fp-timeline .fp-buffer {
+      display: none;
+    }
+  }
+  &.no-controlbar {
+    .fp-controls {
+      visibility: hidden;
+    }
+    &.is-muted {
+      .fp-controls .fp-volume {
+        order: 101;
+      }
+      .fp-controls .fp-volumebtn {
+        visibility: visible;
+        display: block;
+      }
+      .fp-controls .fp-volumebar {
+        display: none;
+      }
+    }
+    .fp-forward,
+    .fp-rewind {
+      visibility: hidden;
+    }
+  }
+  &.no-volume {
+    .fp-volumebar {
+      display: none;
+    }
+  }
+}

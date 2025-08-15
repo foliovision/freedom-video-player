@@ -1,68 +1,73 @@
-// icons (4 different sets are coming soon)
-@font-face
-  font-family: freedomplayer
-  src: url("icons/freedomplayer.eot?#iefix") format("embedded-opentype"), url("icons/freedomplayer.woff2") format("woff2"), url("icons/freedomplayer.woff") format("woff")
+/* icons (4 different sets are coming soon)*/
+@font-face {
+  font-family: freedomplayer;
+	src: url("icons/freedomplayer.woff2") format("woff2"), url("icons/freedomplayer.woff") format("woff");
+}
 
-.fp-icon
-  display: inline-block
+.fp-icon {
+  display: inline-block;
 
-  &:before, &:after
-    font-family: freedomplayer
-    font-size: 1.7em
-
-.fp-controls svg
-  fill: whitesmoke
-  stroke: whitesmoke
-
-.fp-airplay svg
-  vertical-align: text-top
-  width: 18px
-
-.fp-fullscreen
-  order: 100
-  svg
-    vertical-align: text-top
-    stroke-width: 4
-    width: 22px
-    &.fp-fullscreen-exit
-      display: none
-      fill: none
-      stroke-width: 3
-
-.fp-checked:before
-  content: "\e003"
-
-.fp-embed:before
-  content: "\e004"
-  color: #fff
-
-.fp-controls a.fp-chromecast
-  margin: 0 0.5em
-
-.fp-chromecast svg
-  vertical-align: text-top
-  width: 20px
-
-.fp-email:before
-  content: "\e006"
-
-.fp-playbtn:before
-  /* autoprefixer: off */
-  content: "\e007"
-  display: flex
-  line-height: 0
-
-.fp-volumebtn:before
-  content: "\e00b"
-
-.fp-volume-off:before
-  content: "\e00d"
-
-.fp-unload:before
-  content: "\e00f"
-
-.fp-prevbtn:before
-  content: "\e011"
-
-.fp-nextbtn:before
-  content: "\e012"
+	&::before,
+	&::after {
+    font-family: freedomplayer;
+    font-size: 1.7em;
+  }
+}
+.fp-controls svg {
+  fill: whitesmoke;
+  stroke: whitesmoke;
+}
+.fp-airplay svg {
+  vertical-align: text-top;
+  width: 18px;
+}
+.fp-fullscreen {
+  order: 100;
+  svg {
+    vertical-align: text-top;
+    stroke-width: 4;
+    width: 22px;
+    &.fp-fullscreen-exit {
+      display: none;
+      fill: none;
+      stroke-width: 3;
+    }
+  }
+}
+.fp-checked:before {
+  content: "\e003";
+}
+.fp-embed:before {
+  content: "\e004";
+  color: #fff;
+}
+.fp-controls a.fp-chromecast {
+  margin: 0 0.5em;
+}
+.fp-chromecast svg {
+  vertical-align: text-top;
+  width: 20px;
+}
+.fp-email:before {
+  content: "\e006";
+}
+.fp-playbtn:before {  /* autoprefixer: off */
+  content: "\e007";
+  display: flex;
+  line-height: 0;
+}
+.fp-volumebtn:before {
+  content: "\e00b";
+}
+.fp-volume-off:before {
+  content: "\e00d";
+}
+.fp-unload:before {
+  content: "\e00f";
+}
+.fp-prevbtn:before {
+  content: "\e011";
+}
+.fp-nextbtn:before {
+  content: "\e012";
+}
