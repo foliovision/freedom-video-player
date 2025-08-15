@@ -34,7 +34,7 @@ min: concat
 skin:
 	# skins
 	@ mkdir -p $(SKIN) $(SKIN)/icons
-	@ npx lightningcss --bundle --browserslist --minify --output-file $(SKIN)/skin.css skin/css/skin.css
+	@ npx lightningcss --bundle --browserslist --output-file $(SKIN)/skin.css skin/css/skin.css
 	@ ex -sc '1i|@charset \"UTF-8\";' -cx $(SKIN)/skin.css
 	@ cp -p skin/icons/freedomplayer.woff* $(SKIN)/icons/
 
