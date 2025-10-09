@@ -470,6 +470,10 @@
       &.fp-grey
         background-color: rgba(#fff, 0.75)
 
+  &.is-rtl
+    .fp-elapsed
+      margin-left: 0
+
   // IE8-9 mostly (.no-flex must be before skin options)
   &.no-flex
     .fp-controls
@@ -573,6 +577,11 @@
         position: relative
         content: "/"
         left: -.3em
+
+    &.is-rtl
+      .fp-duration, .fp-remaining
+        &:before
+          left: .3em
 
   &.fp-slim.fp-full .fp-controls:hover .fp-timeline
     height: .3em
