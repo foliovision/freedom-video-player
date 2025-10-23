@@ -1,3 +1,4 @@
+@use "sass:map";
 $features: (
   'portrait': 'orientation: portrait',
   'landscape': 'orientation: landscape',
@@ -11,8 +12,8 @@ $features: (
   $query: null;
 
   @each $name in $names {
-    @if map-has-key($features, $name) {
-      $breakpoint: map-get($features, $name);
+    @if map.has-key($features, $name) {
+      $breakpoint: map.get($features, $name);
       $query: if($query, $query + ' and ' + $breakpoint, $breakpoint);
     } @else {
       @warn "Missing `#{$name}` in $features map.";

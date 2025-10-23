@@ -9,7 +9,7 @@
   "scripts": {
     "test": "mochify ./test/unit/*.js",
     "test-watch": "mochify -w ./test/unit/*.js",
-    "fixmeprepublish": "make clean && make skin && make min && make flash && make",
+    "fixmeprepublish": "make clean && make skin && make min && make",
     "testBundle": "browserify -o dist/test-bundle.js test/main.js"
   },
   "repository": {
@@ -37,24 +37,49 @@
     "scriptjs": "^2.5.9"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.12",
+    "autoprefixer": "^10.4.21",
     "brfs": "^2.0.2",
-    "browserify": "^17.0.0",
+    "browserify": "^17.0.1",
     "browserify-derequire": "^1.1.1",
-    "ie8": "=0.8.1",
-    "mochify": "~9.2.0",
-    "node-sass": "^7.0.3",
-    "postcss": "^8.4.18",
-    "postcss-cli": "^10.0.0",
-    "postcss-unopacity": "^2.0.0",
-    "uglify-js": "^3.17.3"
+    "cssnano": "^7.1.1",
+    "mochify": "^8.0.1",
+    "postcss": "^8.5.6",
+    "postcss-cli": "^11.0.1",
+    "postcss-combine-duplicated-selectors": "^10.0.3",
+    "postcss-combine-media-query": "^2.1.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-css-order": "^2.1.2",
+    "sass": "^1.93.2",
+    "uglify-js": "^3.19.3"
   },
   "postcss": {
     "plugins": {
       "autoprefixer": {},
-      "postcss-unopacity": {
-        "method": "copy"
+      "postcss-combine-duplicated-selectors": {
+        "removeDuplicatedProperties": true
+      },
+      "postcss-combine-media-query": {},
+      "cssnano": {
+        "preset": [
+          "default",
+          {
+            "discardComments": {
+              "removeAll": true
+            }
+          }
+        ]
       }
     }
+  },
+  "prettier": {
+    "printWidth": 100,
+    "tabWidth": 2,
+    "useTabs": false,
+    "singleQuote": true,
+    "endOfLine": "lf",
+    "plugins": [
+      "prettier-plugin-css-order"
+    ],
+    "cssDeclarationSorterOrder": "smacss"
   }
 }

@@ -23,7 +23,6 @@ raw:
 	# raw player
 	@ mkdir	-p $(DIST)
 	@ cat LICENSE.js | $(SET_VERSION) | $(SET_DATE) > $(JS)
-	@ cat node_modules/ie8/build/ie8.js >> $(JS)
 	@ echo >> $(JS)
 	@ browserify -t brfs -p browserify-derequire -s freedomplayer lib/index.js | $(SET_VERSION) >> $(JS)
 
@@ -35,8 +34,13 @@ min: concat
 skin:
 	# skins
 	@ mkdir -p $(SKIN)
-	@ node-sass skin/sass/skin.sass | postcss > $(SKIN)/skin.css
+	@ sass skin/sass/skin.sass \
+	| postcss \
+	| prettier --stdin-filepath skin.css \
+	| sed '/}/a\\' \
+	> $(SKIN)/skin.css
 	@ cp -r skin/icons $(SKIN)
+	@ echo "# skin.css" `wc -c < $(SKIN)/skin.css | tr -d '[:space:]'`b
 
 zip: min concat skin
 	@ cp index.html $(DIST)
