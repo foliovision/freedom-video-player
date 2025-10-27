@@ -30,17 +30,17 @@ min: concat
 	# freedomplayer.min.js
 	@ uglifyjs $(JS) --comments '/foliovision.com\/player\/legal\/freedom-player-license/' --compress --mangle --output $(DIST)/freedomplayer.min.js
 
-# make all skins
+# make CSS sequence: SASS Preprocess > PostCSS Postprocess > Prettier Format > awk Append newlines > Copy to dist > Print filesize)
 skin:
 	# skins
 	@ mkdir -p $(SKIN)
 	@ sass skin/sass/skin.sass \
 	| postcss \
 	| prettier --stdin-filepath skin.css \
-	| sed '/}/a\\' \
+ 	| awk '/}/ {print; print ""; next} {print}' \
 	> $(SKIN)/skin.css
 	@ cp -r skin/icons $(SKIN)
-	@ echo "# skin.css" `wc -c < $(SKIN)/skin.css | tr -d '[:space:]'`b
+	@ echo "# skin.css" `wc -c < $(SKIN)/skin.css | tr -d '[:space:]'`B
 
 zip: min concat skin
 	@ cp index.html $(DIST)
