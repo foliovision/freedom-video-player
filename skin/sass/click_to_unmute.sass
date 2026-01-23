@@ -1,0 +1,35 @@
+.freedomplayer
+  .fp-message-muted
+    text-align: center
+    &.fp-shown
+      opacity: 0
+    &:hover, &:active
+      text-shadow: 0px 0px 5px rgba(255, 255, 255, 0.66)
+  &.is-mouse-over
+    .fp-message-muted.fp-shown
+      opacity: 1
+  &.has-fp-message-muted
+    .fp-header
+      display: none
+  .fp-volumebtn-notice
+    position: relative
+    top: 3px
+    &:before
+      content: "\e00d"
+  &.fp-outlined .fp-volumebtn-notice:before,
+  &.fp-minimal .fp-volumebtn-notice:before
+    content: "\e20d"
+  &.fp-edgy .fp-volumebtn-notice:before
+    content: "\e10d"
+  &.fp-edgy.fp-outlined .fp-volumebtn-notice:before,
+  &.fp-edgy.fp-minimal .fp-volumebtn-notice:before
+    content: "\e30d"
+
+  &.no-controlbar.is-muted
+    .fp-message-muted
+      opacity: 1
+    &:not(.has-fp-message-muted)
+      .fp-controls
+        opacity: 1
+        .fp-volume
+          opacity: 1
