@@ -1,11 +1,11 @@
-@import 'icons'
-@import 'state'
-@import 'modifiers'
-@import 'animation'
-@import 'chromecast'
-@import 'playlist'
-@import 'edgy'
-@import 'media'
+@use 'icons'
+@use 'state'
+@use 'modifiers'
+@use 'animation'
+@use 'chromecast'
+@use 'playlist'
+@use 'edgy'
+@use 'media'
 
 // used often
 %absolute
@@ -294,7 +294,7 @@
     height: 54%
     top: 50%
     transform: translateY(-50%)
-    @include screen('portrait')
+    @include media.screen('portrait')
       width: 14vw
     svg
       max-width: 14vw
@@ -305,21 +305,21 @@
   .fp-forward
     left: auto
     padding-left: 9vw
-    @include screen('portrait')
+    @include media.screen('portrait')
       padding-left: auto
     right: 0
     svg
       margin-left: 9vw
-      @include screen('portrait')
+      @include media.screen('portrait')
         margin-left: 0
   .fp-rewind
     left: 0
     padding-right: 9vw
-    @include screen('portrait')
+    @include media.screen('portrait')
       padding-right: auto
     svg
       margin-right: 9vw
-      @include screen('portrait')
+      @include media.screen('portrait')
         margin-right: 0
   &.is-mouseover.is-ready
     .fp-forward, .fp-rewind
