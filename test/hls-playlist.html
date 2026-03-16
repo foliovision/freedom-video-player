@@ -13,7 +13,7 @@
       text-align: center;
       padding-top: 1%;
    }
-   .freedomplayer { width: 70%; }
+   .freedomplayer { width: 100%; }
    </style>
    <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
    <!-- include freedomplayer -->
@@ -23,13 +23,13 @@
 <body>
 
    <!-- the player -->
-   <div id="player">
+   <div id="player" class="is-splash">
     </div>
 
     <script>
     var el = document.getElementById('player');
     var api = freedomplayer(el, {
-        ratio: 0.417,
+        ratio: 9/16,
         nativesubtitles: true,
         playlist: [{
            sources: [{
@@ -45,6 +45,11 @@
             sources: [{
               type: 'application/x-mpegurl',
               src: '//edge.flowplayer.org/night3.m3u8'
+            }]
+        },{
+            sources: [{
+              type: 'video/mp4',
+              src: '//edge.flowplayer.org/night4.mp4'
             }]
         }]
       });
