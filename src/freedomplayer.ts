@@ -11,7 +11,7 @@
 import * as common from './common';
 import slider from './ext/ui/slider';
 import barSlider from './ext/ui/bar-slider';
-import setupEvents from './ext/events';
+import setupEvents, { EVENTS } from './ext/events';
 import URLResolver from './ext/resolve';
 import type { PlayerApi, PlayerConf, VideoObject, EngineApi, ExtensionFn, SupportFlags } from './types';
 
@@ -211,8 +211,8 @@ if (typeof (window as any).jQuery !== 'undefined') {
       const conf = $.extend({}, opts || {}, confObject, root.data());
       const api = initializePlayer(this, conf, callback);
       if (api) {
-        const { EVENTS } = require('./ext/events');
-        (EVENTS as string[]).forEach(evName => {
+
+        (EVENTS as readonly string[]).forEach(evName => {
           api.on(evName + '.jquery', (ev: { type: string; detail?: { args?: unknown[] } }) => {
             root.trigger.call(root, ev.type, ev.detail && ev.detail.args);
           });
