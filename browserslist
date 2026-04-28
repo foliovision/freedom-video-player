@@ -1,11 +1,11 @@
-Safari > 12
+Safari >= 12
 Chrome >= 102
-Firefox > 77
+Firefox >= 78
 iOS >= 12.5
 ChromeAndroid > 129
 Android > 129
 Edge > 119
-Samsung > 24
+Samsung >= 25
 FirefoxAndroid > 129
 Opera > 112
 not IE 11
