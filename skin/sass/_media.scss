@@ -14,7 +14,11 @@ $features: (
   @each $name in $names {
     @if map.has-key($features, $name) {
       $breakpoint: map.get($features, $name);
-      $query: if($query, $query + ' and ' + $breakpoint, $breakpoint);
+      @if $query {
+        $query: $query + ' and ' + $breakpoint;
+      } @else {
+        $query: $breakpoint;
+      }
     } @else {
       @warn "Missing `#{$name}` in $features map.";
     }
