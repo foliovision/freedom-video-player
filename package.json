@@ -4,14 +4,11 @@
   "description": "The HTML5 video player for the web",
   "main": "dist/freedomplayer.js",
   "module": "dist/freedomplayer.esm.js",
-  "types": "dist/types/index.d.ts",
   "directories": {
     "test": "test"
   },
   "scripts": {
     "build": "rollup -c rollup.config.mjs",
-    "typecheck": "tsc --noEmit",
-    "lint": "tsc --noEmit",
     "test": "mochify ./test/unit/*.js",
     "test-watch": "mochify -w ./test/unit/*.js",
     "testBundle": "browserify -o dist/test-bundle.js test/main.js"
@@ -41,7 +38,6 @@
   "devDependencies": {
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-terser": "^0.4.4",
-    "@rollup/plugin-typescript": "^12.1.0",
     "autoprefixer": "^10.4.21",
     "cssnano": "^7.1.1",
     "mochify": "^8.0.1",
@@ -53,9 +49,7 @@
     "prettier-plugin-css-order": "^2.1.2",
     "rollup": "^4.24.0",
     "rollup-plugin-string": "^3.0.0",
-    "sass": "^1.93.2",
-    "tslib": "^2.8.0",
-    "typescript": "^5.6.0"
+    "sass": "^1.93.2"
   },
   "postcss": {
     "plugins": {

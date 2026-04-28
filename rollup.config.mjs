@@ -1,4 +1,3 @@
-import typescript from '@rollup/plugin-typescript';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import terser from '@rollup/plugin-terser';
 import { readFileSync } from 'fs';
@@ -30,7 +29,7 @@ const banner = license;
 export default [
   // Main UMD build
   {
-    input: 'src/index.ts',
+    input: 'src/index.js',
     output: [
       {
         file: 'dist/freedomplayer.js',
@@ -43,17 +42,12 @@ export default [
     ],
     plugins: [
       svgPlugin(),
-      nodeResolve(),
-      typescript({
-        tsconfig: './tsconfig.json',
-        declaration: false,
-        sourceMap: true
-      })
+      nodeResolve()
     ]
   },
   // Minified build
   {
-    input: 'src/index.ts',
+    input: 'src/index.js',
     output: [
       {
         file: 'dist/freedomplayer.min.js',
@@ -67,11 +61,6 @@ export default [
     plugins: [
       svgPlugin(),
       nodeResolve(),
-      typescript({
-        tsconfig: './tsconfig.json',
-        declaration: false,
-        sourceMap: false
-      }),
       terser({
         format: {
           comments: /foliovision\.com\/player\/legal\/freedom-player-license/
@@ -81,7 +70,7 @@ export default [
   },
   // ES module build
   {
-    input: 'src/index.ts',
+    input: 'src/index.js',
     output: [
       {
         file: 'dist/freedomplayer.esm.js',
@@ -92,13 +81,7 @@ export default [
     ],
     plugins: [
       svgPlugin(),
-      nodeResolve(),
-      typescript({
-        tsconfig: './tsconfig.json',
-        declaration: true,
-        declarationDir: './dist/types',
-        sourceMap: true
-      })
+      nodeResolve()
     ]
   }
 ];
