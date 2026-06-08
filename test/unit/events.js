@@ -63,6 +63,23 @@ describe('lib/ext/events.js', function() {
       dispatchEvent('CustomEvent', 'foo');
       dispatchEvent('CustomEvent', 'bar');
     });
+    it('should alias unload to avoid native lifecycle event', function(cb) {
+      var nativeUnload = false;
+      elem.addEventListener('unload', function() { nativeUnload = true; });
+      obj.on('unload', function(ev) {
+        assert(ev.type === 'unload');
+        cb();
+      });
+      obj.trigger('unload');
+      assert(!nativeUnload);
+    });
+    it('should support namespaced unload handlers', function(cb) {
+      obj.on('unload.pl', function(ev) {
+        assert(ev.type === 'unload');
+        cb();
+      });
+      obj.trigger('unload');
+    });
   });
 
   describe('.trigger', function() {
