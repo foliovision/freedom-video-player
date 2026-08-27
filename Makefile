@@ -12,7 +12,7 @@ DIST=./dist
 JS=$(DIST)/freedomplayer.js
 SKIN=$(DIST)/skin
 
-# https://foliovision.com/player/legal/freedom-player-license
+# Build with rollup (TypeScript -> JS)
 concat: raw
 	# freedomplayer.js
 	@ node -e "var fs = require('fs'), js=fs.readFileSync('$(JS)', 'utf8'); process.stdout.write(js.replace('//BRANDING', fs.readFileSync('deps/branding.js', 'utf8')));" > $(JS).tmp
@@ -21,14 +21,17 @@ concat: raw
 # the raw / non-working player without branding
 raw:
 	# raw player
-	@ mkdir	-p $(DIST)
-	@ cat LICENSE.js | $(SET_VERSION) | $(SET_DATE) > $(JS)
-	@ echo >> $(JS)
-	@ browserify -t brfs -p browserify-derequire -s freedomplayer lib/index.js | $(SET_VERSION) >> $(JS)
+	@ mkdir -p $(DIST)
+	@ cat LICENSE.js | $(SET_VERSION) | $(SET_DATE) > $(JS).header
+	@ echo >> $(JS).header
+	@ rollup -c rollup.config.mjs
+	@ cat $(JS).header $(JS) > $(JS).tmp
+	@ mv $(JS).tmp $(JS)
+	@ rm $(JS).header
 
 min: concat
-	# freedomplayer.min.js
-	@ uglifyjs $(JS) --comments '/foliovision.com\/player\/legal\/freedom-player-license/' --compress --mangle --output $(DIST)/freedomplayer.min.js
+	# freedomplayer.min.js is produced by rollup as well
+	@ echo "freedomplayer.min.js already built by rollup"
 
 # make CSS sequence: SASS Preprocess > PostCSS Postprocess > Prettier Format > awk Append newlines > Copy to dist > Print filesize
 skin:
@@ -63,4 +66,7 @@ js: concat
 browserlist:
 	@ npx browserslist@latest --update-db
 
-.PHONY: dist skin deps
+typecheck:
+	@ tsc --noEmit
+
+.PHONY: dist skin deps typecheck

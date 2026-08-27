@@ -1,17 +1,30 @@
 {
   "name": "freedomplayer",
-  "version": "7.2.15",
+  "version": "8.0.0",
   "description": "The HTML5 video player for the web",
   "main": "dist/freedomplayer.js",
+  "module": "dist/freedomplayer.esm.js",
   "directories": {
     "test": "test"
   },
   "scripts": {
+    "build": "rollup -c rollup.config.mjs",
     "test": "mochify ./test/unit/*.js",
     "test-watch": "mochify -w ./test/unit/*.js",
-    "fixmeprepublish": "make clean && make skin && make min && make",
     "testBundle": "browserify -o dist/test-bundle.js test/main.js"
   },
+  "browserslist": [
+    "Safari >= 15",
+    "Chrome >= 102",
+    "Firefox >= 78",
+    "iOS >= 12",
+    "ChromeAndroid >= 129",
+    "Edge >= 119",
+    "Samsung >= 24",
+    "FirefoxAndroid >= 129",
+    "Opera >= 112",
+    "not IE 11"
+  ],
   "repository": {
     "type": "git",
     "url": "git://github.com/foliovision/freedom-video-player.git"
@@ -21,26 +34,11 @@
   "bugs": {
     "url": "https://github.com/foliovision/freedom-video-player/issues"
   },
-  "jshintConfig": {
-    "browser": true,
-    "node": true,
-    "strict": true,
-    "newcap": false,
-    "multistr": true
-  },
-  "dependencies": {
-    "bean": "github:foliovision/bean",
-    "class-list": "~0.1.1",
-    "computed-style": "^0.3.0",
-    "extend-object": "~1.0.0",
-    "is-function": "~1.0.2",
-    "scriptjs": "^2.5.9"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "@rollup/plugin-node-resolve": "^16.0.0",
+    "@rollup/plugin-terser": "^0.4.4",
     "autoprefixer": "^10.4.21",
-    "brfs": "^2.0.2",
-    "browserify": "^17.0.1",
-    "browserify-derequire": "^1.1.1",
     "cssnano": "^7.1.1",
     "mochify": "^8.0.1",
     "postcss": "^8.5.6",
@@ -49,8 +47,9 @@
     "postcss-combine-media-query": "^2.1.0",
     "prettier": "^3.6.2",
     "prettier-plugin-css-order": "^2.1.2",
-    "sass": "^1.93.2",
-    "uglify-js": "^3.19.3"
+    "rollup": "^4.24.0",
+    "rollup-plugin-string": "^3.0.0",
+    "sass": "^1.93.2"
   },
   "postcss": {
     "plugins": {
