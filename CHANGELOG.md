@@ -1,3 +1,45 @@
+Version 8.2.0
+=============
+
+Enhancements
+------------
+
+* Mobile: Entering fullscreen should not show all the UI
+* Mobile: Show fullscreen button when first video starts playing
+* Make is-small, is-tiny states disabled for vertical videos
+* Chrome 142+ does support HLS natively, but we have to test it a lot more before we stop using HLS.js for it
+* CSS: Fix browserlist to target Chrome >= 102
+
+Fixes
+-----
+
+* Avoid play button animation when the video first starts
+* Avoid controls blinking when video starts
+* CSS: Fixed subtitles bottom margin, do not move up for controlba
+* CSS: Avoid captions moving up on hover or pause if using fixed controls
+* Rename unload event to fp:unload internally to avoid issues with HTTP header Permissions-Policy set to unload=()
+
+Version 8.1.0
+=============
+
+Enhancements
+------------
+
+* Click to unmute: Show when audible autoplay has failed
+* CSS: Switching from node-sass to postcss
+* Performance: Batch DOM updates
+* manual_resume: Detect if resumed manually
+* Video tag crossOrigin property
+
+Fixes
+-----
+
+* Avoid showing play/pause animations when looping a video
+* CSS: Fix fixed controls blinking in Safari when hovering/not hovering the player
+* CSS: RTL: Fix elapsed and total time spacing
+* CSS: tagDiv theme fix for player loading, play and pause buttons
+* Mobile: Forward/rewind buttons: Only if controls are enabled
+
 Version 8.0.20
 =============
 
