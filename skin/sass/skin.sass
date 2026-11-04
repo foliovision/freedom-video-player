@@ -143,6 +143,20 @@
       opacity: 1
       visibility: visible      
 
+  // Fullscreen hint on touch devices - show only the fullscreen button for a while, then fade it out
+  // Used when the first video starts playing and after entering fullscreen
+  &.is-fullscreen-hint:not(.is-mouseover), &.is-fullscreen-hint-out:not(.is-mouseover)
+    .fp-controls
+      opacity: 1
+      visibility: hidden
+    .fp-fullscreen
+      opacity: 1
+      visibility: visible
+  &.is-fullscreen-hint-out:not(.is-mouseover)
+    .fp-fullscreen
+      opacity: 0
+      transition: opacity 1s
+
   // topmost elements and actions
   .fp-header
     @extend %absolute
